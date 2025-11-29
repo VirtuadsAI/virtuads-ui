@@ -1,0 +1,39 @@
+import React from 'react';
+import { ChevronRight } from 'lucide-react';
+import bgHero from '../../assets/bg-hero.png';
+
+const Hero = () => (
+    <section
+        id="inicio"
+        className="min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `linear-gradient(to right, rgba(6, 13, 9, 0.95) 30%, rgba(6, 13, 9, 0.4)), url(${bgHero})` }}
+    >
+        <div className="container mx-auto px-6">
+            <div className="max-w-3xl text-left">
+                <div className="inline-block px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/30 mb-6">
+                    <p className="text-brand-green text-sm font-semibold">Primera plataforma Web3 de publicidad descentralizada</p>
+                </div>
+                <h1 className="text-5xl md:text-7xl font-black uppercase leading-tight mb-6 text-white">
+                    Publicidad Web3 <br />con IA y Blockchain
+                </h1>
+                <p className="text-xl md:text-2xl text-brand-gray mb-4">
+                    Automatiza campañas digitales en web, metaversos y videojuegos P2E
+                </p>
+                <p className="text-lg text-brand-green mb-8">
+                    XRPL (Ripple) • Chainlink • Agentes IA • Brave/BAT • CBDCs
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <button className="bg-brand-green text-brand-dark font-bold px-10 py-4 rounded-md text-xl transition-transform hover:scale-105 flex items-center justify-center gap-2">
+                        ÚNETE A LA REVOLUCIÓN
+                        <ChevronRight className="w-5 h-5" />
+                    </button>
+                    <button className="border-2 border-brand-green text-brand-green font-bold px-10 py-4 rounded-md text-xl transition-all hover:bg-brand-green/10">
+                        VER WHITEPAPER
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+);
+
+export default Hero;
