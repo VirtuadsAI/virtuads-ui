@@ -1,0 +1,421 @@
+{
+    "header": {
+        "brand": "VIRTUADSAI",
+        "nav": {
+            "home": "ホーム",
+            "technology": "テクノロジー",
+            "useCases": "ユースケース",
+            "roadmap": "ロードマップ",
+            "pilots": "パイロット"
+        },
+        "betaAccess": "ベータアクセスをリクエスト"
+    },
+    "hero": {
+        "badge": "初のWeb3分散型広告プラットフォーム",
+        "title": "AIとブロックチェーンによるWeb3広告",
+        "subtitle": "ウェブ、メタバース、P2Eゲームでデジタルキャンペーンを自動化",
+        "technologies": "XRPL (Ripple) • Chainlink • AIエージェント • Brave/BAT • CBDCs",
+        "ctaPrimary": "革命に参加する",
+        "ctaSecondary": "ホワイトペーパーを見る"
+    },
+    "problemSolution": {
+        "problemTitle": "問題",
+        "problems": {
+            "centralized": {
+                "title": "中央集権的支配",
+                "description": "GoogleとMetaがデジタル広告市場の70%以上を支配"
+            },
+            "transparency": {
+                "title": "透明性の欠如",
+                "description": "不透明な指標と不公平な収益分配"
+            },
+            "exclusion": {
+                "title": "価値の排除",
+                "description": "ユーザーと政府が生成された価値から除外"
+            }
+        },
+        "solutionTitle": "解決策",
+        "solutionDescription": "VirtuAdsAIは、Web3における初の監査可能、相互運用可能、規制準拠の広告レイヤーです。",
+        "features": {
+            "transparency": "オンチェーンで検証可能なコンバージョンによる完全な透明性",
+            "payments": "XRPLを介したステーブルコインとCBDCでのプログラム可能な支払い",
+            "interoperability": "Chainlink CCIPによるマルチチェーン相互運用性",
+            "privacy": "zk-proofsとBrave Adsによる高度なプライバシー",
+            "fairSharing": "ユーザー、政府、開発者、プラットフォーム間の公平な分配"
+        },
+        "strategicGoal": {
+            "title": "戦略目標",
+            "description": "グローバルデジタル広告市場の≥5%を獲得（6000億ドル+）"
+        }
+    },
+    "about": {
+        "title": "VIRTUADSAIとは？",
+        "description1": "VirtuAdsAIは、ウェブ、メタバース、Play-to-Earn（P2E）ビデオゲームでデジタルキャンペーンを自動化する初のWeb3分散型広告プラットフォームです。",
+        "description2": "即時決済のXRPL（Ripple）、安全なオラクルのためのChainlink/CCIP、最適化のためのAIエージェント、プライバシー優先のインベントリのためのBrave/BATなど、最先端技術を統合しています。",
+        "stats": {
+            "marketSize": {
+                "value": "6000億ドル+",
+                "label": "グローバル市場"
+            },
+            "targetCapture": {
+                "value": "≥5%",
+                "label": "獲得目標"
+            }
+        }
+    },
+    "techStack": {
+        "title": "技術アーキテクチャ",
+        "subtitle": "分散型、透明性、効率的な広告のための最先端技術スタック",
+        "technologies": {
+            "xrpl": {
+                "title": "XRPL (Ripple)",
+                "description": "プログラム可能な支払いのメインレール。ステーブルコイン（USDC、USDT）とCBDC（RLUSD、Bre·B）で数秒で決済。"
+            },
+            "chainlink": {
+                "title": "Chainlink/CCIP",
+                "description": "外部データ用の安全なオラクル、リザーブの証明、信頼性の高いマルチチェーン相互運用性。"
+            },
+            "ai": {
+                "title": "AIエージェント",
+                "description": "自動キャンペーン計画、リアルタイム最適化、コンプライアンス、生成的創造性。"
+            },
+            "brave": {
+                "title": "Brave/BAT",
+                "description": "ユーザー同意による広告のプライバシー優先インベントリ（契約に従う）。"
+            },
+            "sdk": {
+                "title": "P2E/メタバースSDK",
+                "description": "Decentraland、Spatial、Star Atlas用のNFT広告、ゲーム内メトリクス、リアルタイムレポート。"
+            },
+            "dashboard": {
+                "title": "ダッシュボードとAPI",
+                "description": "リアルタイムメトリクス、オンチェーン監査、完全な規制報告。"
+            }
+        }
+    },
+    "useCases": {
+        "title": "ユースケース",
+        "subtitle": "B2BとB2CのためのWeb3広告の実際のアプリケーション",
+        "cases": {
+            "cbdc": {
+                "title": "CBDC Bre·Bキャンペーン",
+                "description": "コロンビア中央銀行のデジタル通貨（CBDC）でキャンペーンに支払い。"
+            },
+            "nft": {
+                "title": "メタバースのNFT広告",
+                "description": "Decentraland/Spatialの仮想イベントやコンサートでのトークン化された広告スペース。"
+            },
+            "rewards": {
+                "title": "暗号報酬",
+                "description": "ユーザーは広告とのインタラクションでBAT、ステーブルコイン、NFTバッジを獲得。"
+            },
+            "retargeting": {
+                "title": "スマートリターゲティング",
+                "description": "リアルタイムコンテキストキャンペーンのためのオラクルデータ（天気、IoT、イベント）。"
+            }
+        },
+        "segments": {
+            "b2b": {
+                "title": "B2Bセグメント",
+                "items": [
+                    "グローバルブランドと中小企業",
+                    "銀行（CBDC統合）",
+                    "P2Eゲームスタジオ",
+                    "メタバース開発者"
+                ]
+            },
+            "b2c": {
+                "title": "B2Cセグメント",
+                "items": [
+                    "ゲーマーとP2Eプレイヤー",
+                    "暗号ウォレットを持つユーザー",
+                    "NFTデジタルクリエイター",
+                    "Web3早期採用者"
+                ]
+            }
+        }
+    },
+    "developers": {
+        "title": "P2E開発者",
+        "subtitle": "分散型で透明性のある広告でビデオゲームやメタバースを収益化",
+        "benefits": {
+            "revenue": {
+                "title": "22%収益シェア",
+                "description": "従来のプラットフォームよりも多く稼ぐ。XRPLを介したステーブルコインでの自動支払い。",
+                "features": [
+                    "即時支払い",
+                    "透明なダッシュボード"
+                ]
+            },
+            "integration": {
+                "title": "シンプルな統合",
+                "description": "UnityとUnreal Engineに対応したプラグアンドプレイSDK。48時間以内に統合。",
+                "features": [
+                    "完全なドキュメント",
+                    "専用サポート"
+                ]
+            },
+            "control": {
+                "title": "完全なコントロール",
+                "description": "表示する広告を決定できます。邪魔にならずにプレイヤーの体験を保護。",
+                "features": [
+                    "コンテンツフィルター",
+                    "ネイティブフォーマット"
+                ]
+            }
+        },
+        "integrationProcess": {
+            "title": "統合プロセス",
+            "steps": [
+                "登録",
+                "SDKダウンロード",
+                "ゾーン設定",
+                "ウォレット接続",
+                "収益化！"
+            ]
+        },
+        "cta": "SDK早期アクセスをリクエスト",
+        "ctaSubtext": "最初の10ゲーム統合に優先権 • 24/7技術サポート"
+    },
+    "compliance": {
+        "title": "コンプライアンスとプライバシー",
+        "subtitle": "グローバル規制とセキュリティ基準に準拠するように設計されたプラットフォーム",
+        "sections": {
+            "regulation": {
+                "title": "グローバル規制",
+                "items": [
+                    "MiCA（EU）",
+                    "GDPR",
+                    "FATF/AML",
+                    "SEC（米国）",
+                    "SFC（コロンビア）"
+                ]
+            },
+            "security": {
+                "title": "セキュリティメカニズム",
+                "items": [
+                    "プログラム可能なKYC/AML",
+                    "動的ジオフェンシング",
+                    "zk-proofs（プライバシー）",
+                    "キー用のHSM/KMS"
+                ]
+            },
+            "certifications": {
+                "title": "認証",
+                "items": [
+                    "ISO/IEC 27001（2027年目標）",
+                    "OWASP Top 10",
+                    "SOC 2 Type II",
+                    "DAOガバナンス（2026年）"
+                ]
+            }
+        }
+    },
+    "revenueSharing": {
+        "title": "公平な収益分配",
+        "subtitle": "すべてのステークホルダー間の透明な収入分配モデル",
+        "shares": {
+            "platform": {
+                "percentage": "30%",
+                "title": "VirtuAdsAI",
+                "description": "プラットフォームと開発"
+            },
+            "users": {
+                "percentage": "25%",
+                "title": "エンドユーザー",
+                "description": "インタラクションと注目"
+            },
+            "developers": {
+                "percentage": "22%",
+                "title": "メタバース/P2E開発者",
+                "description": "在庫とトラフィック"
+            },
+            "dao": {
+                "percentage": "10%",
+                "title": "DAOプール",
+                "description": "分散型ガバナンス"
+            },
+            "partners": {
+                "percentage": "8%",
+                "title": "パートナー/チャネル",
+                "description": "配信と提携"
+            },
+            "governments": {
+                "percentage": "5%",
+                "title": "政府/規制当局",
+                "description": "税金とコンプライアンス"
+            }
+        },
+        "tokenomics": {
+            "title": "トークノミクス",
+            "items": {
+                "mainRail": {
+                    "title": "メインレール",
+                    "description": "即時支払いのためのXRPL"
+                },
+                "cbdcs": {
+                    "title": "サポートされるCBDC",
+                    "description": "Bre·B（コロンビア）、RLUSD（Ripple）"
+                },
+                "stablecoins": {
+                    "title": "ステーブルコイン",
+                    "description": "USDC、USDT、PYUSD"
+                },
+                "dao": {
+                    "title": "DAOガバナンス",
+                    "description": "2026年第2四半期（10%プール）"
+                }
+            }
+        }
+    },
+    "pilots": {
+        "title": "検証とパイロット",
+        "subtitle": "実際のシナリオでプラットフォームを検証する戦略的パイロットプロジェクト",
+        "projects": {
+            "bancannabis": {
+                "name": "Bancannabis",
+                "description": "NFT広告とXRPLテストネットを使用した初期パイロット。トークン化された医療用大麻マーケットプレイス。",
+                "status": "2025年第3-4四半期"
+            },
+            "metaverses": {
+                "name": "DecentralandとSpatial",
+                "description": "メタバースの仮想イベントとコンサートでのオンチェーンコンバージョントレーサビリティ。",
+                "status": "2025年第4四半期"
+            },
+            "starAtlas": {
+                "name": "Star Atlas",
+                "description": "NFT広告と高度なゲーム内メトリクスを検証するための大規模P2E環境。",
+                "status": "2026年第1四半期"
+            },
+            "brave": {
+                "name": "Braveウォレット",
+                "description": "ユーザー報酬のためのBATエコシステムとのプライバシー優先統合。",
+                "status": "2026年第2四半期"
+            }
+        }
+    },
+    "competitiveAdvantage": {
+        "title": "競争優位性",
+        "subtitle": "従来のプラットフォームおよび既存のWeb3プラットフォームとの比較",
+        "table": {
+            "headers": {
+                "feature": "機能",
+                "metaAds": "Meta広告",
+                "braveAds": "Brave広告",
+                "virtuads": "VirtuAdsAI"
+            },
+            "rows": {
+                "onChain": {
+                    "feature": "オンチェーントレーサビリティ",
+                    "meta": "❌",
+                    "brave": "⚠️ 限定的",
+                    "virtuads": "✅ 完全"
+                },
+                "fairSharing": {
+                    "feature": "公平なマルチステークホルダー分配",
+                    "meta": "❌",
+                    "brave": "⚠️ BATのみ",
+                    "virtuads": "✅ 5グループ"
+                },
+                "cbdc": {
+                    "feature": "CBDCサポート",
+                    "meta": "❌",
+                    "brave": "❌",
+                    "virtuads": "✅ Bre·B、RLUSD"
+                },
+                "ai": {
+                    "feature": "高度なAIエージェント",
+                    "meta": "⚠️ 基本",
+                    "brave": "❌",
+                    "virtuads": "✅ 完全"
+                },
+                "nft": {
+                    "feature": "NFT広告（メタバース/P2E）",
+                    "meta": "❌",
+                    "brave": "❌",
+                    "virtuads": "✅ ネイティブ"
+                },
+                "dao": {
+                    "feature": "DAOガバナンス",
+                    "meta": "❌",
+                    "brave": "❌",
+                    "virtuads": "✅ 2026"
+                }
+            }
+        }
+    },
+    "roadmap": {
+        "title": "ロードマップ 2026-2030",
+        "subtitle": "プラットフォームの開発と拡張段階",
+        "phases": {
+            "phase1": {
+                "title": "フェーズ1：ローンチ",
+                "year": "2026",
+                "items": [
+                    "公式プラットフォームローンチ",
+                    "CBDC（Bre·B、RLUSD）を使用したXRPLメインネット",
+                    "メタバースとの最初の統合（Decentraland、Spatial）",
+                    "キャンペーンダッシュボードv2.0",
+                    "最初の10のB2Bクライアント"
+                ]
+            },
+            "phase2": {
+                "title": "フェーズ2：拡張",
+                "year": "2027",
+                "items": [
+                    "5つ以上のP2Eビデオゲームとの統合",
+                    "高度なNFT広告（コンポーザブル、ダイナミック）",
+                    "5つのチェーンでのChainlink CCIP",
+                    "自律的なクリエイティブAIエージェント",
+                    "グローバルで50以上のアクティブクライアント"
+                ]
+            },
+            "phase3": {
+                "title": "フェーズ3：統合",
+                "year": "2028",
+                "items": [
+                    "DAOガバナンス有効化",
+                    "ISO/IEC 27001完全認証",
+                    "10以上のグローバルCBDC統合",
+                    "分散型NFT広告マーケットプレイス",
+                    "200以上のエンタープライズクライアント"
+                ]
+            },
+            "phase4": {
+                "title": "フェーズ4：グローバルリーダーシップ",
+                "year": "2029-2030",
+                "items": [
+                    "30カ国以上での展開",
+                    "> グローバルデジタル広告市場の5%",
+                    "分散型バリデーターネットワーク",
+                    "ユニバーサルWeb3広告SDK",
+                    "分散型広告の業界標準"
+                ]
+            }
+        }
+    },
+    "footer": {
+        "brand": "VIRTUADSAI",
+        "tagline": "AIとブロックチェーンを備えた初のWeb3分散型広告プラットフォーム。",
+        "product": {
+            "title": "製品",
+            "links": {
+                "technology": "テクノロジー",
+                "useCases": "ユースケース",
+                "roadmap": "ロードマップ",
+                "pilots": "パイロット"
+            }
+        },
+        "company": {
+            "title": "企業",
+            "links": {
+                "blog": "ブログ",
+                "whitepaper": "ホワイトペーパー",
+                "careers": "キャリア",
+                "contact": "お問い合わせ"
+            }
+        },
+        "follow": "フォローする",
+        "copyright": "© 2025 VirtuAdsAI. All rights reserved."
+    }
+}

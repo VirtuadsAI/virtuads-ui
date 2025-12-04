@@ -1,0 +1,421 @@
+{
+    "header": {
+        "brand": "VIRTUADSAI",
+        "nav": {
+            "home": "Home",
+            "technology": "Technology",
+            "useCases": "Use Cases",
+            "roadmap": "Roadmap",
+            "pilots": "Pilots"
+        },
+        "betaAccess": "REQUEST BETA ACCESS"
+    },
+    "hero": {
+        "badge": "First Web3 decentralized advertising platform",
+        "title": "Web3 Advertising with AI and Blockchain",
+        "subtitle": "Automate digital campaigns on web, metaverses and P2E video games",
+        "technologies": "XRPL (Ripple) • Chainlink • AI Agents • Brave/BAT • CBDCs",
+        "ctaPrimary": "JOIN THE REVOLUTION",
+        "ctaSecondary": "VIEW WHITEPAPER"
+    },
+    "problemSolution": {
+        "problemTitle": "THE PROBLEM",
+        "problems": {
+            "centralized": {
+                "title": "Centralized Dominance",
+                "description": "Google and Meta control >70% of the digital advertising market"
+            },
+            "transparency": {
+                "title": "Lack of Transparency",
+                "description": "Opaque metrics and unfair revenue sharing"
+            },
+            "exclusion": {
+                "title": "Value Exclusion",
+                "description": "Users and governments excluded from generated value"
+            }
+        },
+        "solutionTitle": "THE SOLUTION",
+        "solutionDescription": "VirtuAdsAI is the first auditable, interoperable and regulatory-compliant advertising layer in Web3.",
+        "features": {
+            "transparency": "Total transparency with on-chain verifiable conversions",
+            "payments": "Programmable payments in stablecoins and CBDCs via XRPL",
+            "interoperability": "Multi-chain interoperability via Chainlink CCIP",
+            "privacy": "Advanced privacy with zk-proofs and Brave Ads",
+            "fairSharing": "Fair distribution among users, governments, devs and platform"
+        },
+        "strategicGoal": {
+            "title": "Strategic Goal",
+            "description": "Capture ≥5% of the global digital advertising market (USD 600B+)"
+        }
+    },
+    "about": {
+        "title": "WHAT IS VIRTUADSAI?",
+        "description1": "VirtuAdsAI is the first Web3 decentralized advertising platform that automates digital campaigns on web, metaverses and Play-to-Earn (P2E) video games.",
+        "description2": "We integrate cutting-edge technologies such as XRPL (Ripple) for instant settlement, Chainlink/CCIP for secure oracles, AI Agents for optimization, and Brave/BAT for privacy-first inventory.",
+        "stats": {
+            "marketSize": {
+                "value": "USD 600B+",
+                "label": "Global Market"
+            },
+            "targetCapture": {
+                "value": "≥5%",
+                "label": "Capture Target"
+            }
+        }
+    },
+    "techStack": {
+        "title": "TECHNOLOGY ARCHITECTURE",
+        "subtitle": "Cutting-edge technology stack for decentralized, transparent and efficient advertising",
+        "technologies": {
+            "xrpl": {
+                "title": "XRPL (Ripple)",
+                "description": "Main programmable payments rail. Settlement in seconds with stablecoins (USDC, USDT) and CBDCs (RLUSD, Bre·B)."
+            },
+            "chainlink": {
+                "title": "Chainlink/CCIP",
+                "description": "Secure oracles for external data, Proof of Reserve and reliable multi-chain interoperability."
+            },
+            "ai": {
+                "title": "AI Agents",
+                "description": "Automatic campaign planning, real-time optimization, compliance and generative creativity."
+            },
+            "brave": {
+                "title": "Brave/BAT",
+                "description": "Privacy-first inventory for ads with user consent (subject to agreements)."
+            },
+            "sdk": {
+                "title": "P2E/Metaverse SDK",
+                "description": "NFT Ads, in-game metrics and real-time reporting for Decentraland, Spatial, Star Atlas."
+            },
+            "dashboard": {
+                "title": "Dashboard & APIs",
+                "description": "Real-time metrics, on-chain auditing and complete regulatory reporting."
+            }
+        }
+    },
+    "useCases": {
+        "title": "USE CASES",
+        "subtitle": "Real-world Web3 advertising applications for B2B and B2C",
+        "cases": {
+            "cbdc": {
+                "title": "Campaigns in CBDC Bre·B",
+                "description": "Pay for campaigns with Colombia's Central Bank digital currency (CBDC)."
+            },
+            "nft": {
+                "title": "NFT Ads in Metaverses",
+                "description": "Tokenized advertising spaces in virtual events and concerts in Decentraland/Spatial."
+            },
+            "rewards": {
+                "title": "Crypto Rewards",
+                "description": "Users earn BAT, stablecoins and NFT badges for interacting with ads."
+            },
+            "retargeting": {
+                "title": "Smart Retargeting",
+                "description": "Oracle data (weather, IoT, events) for real-time contextual campaigns."
+            }
+        },
+        "segments": {
+            "b2b": {
+                "title": "B2B Segment",
+                "items": [
+                    "Global brands and SMEs",
+                    "Banks (CBDC integration)",
+                    "P2E game studios",
+                    "Metaverse developers"
+                ]
+            },
+            "b2c": {
+                "title": "B2C Segment",
+                "items": [
+                    "Gamers and P2E players",
+                    "Users with crypto wallets",
+                    "NFT digital creators",
+                    "Web3 early adopters"
+                ]
+            }
+        }
+    },
+    "developers": {
+        "title": "P2E DEVELOPERS",
+        "subtitle": "Monetize your video game or metaverse with decentralized and transparent advertising",
+        "benefits": {
+            "revenue": {
+                "title": "22% Revenue Share",
+                "description": "Earn more than with traditional platforms. Automatic payments in stablecoins via XRPL.",
+                "features": [
+                    "Immediate payments",
+                    "Transparent dashboard"
+                ]
+            },
+            "integration": {
+                "title": "Simple Integration",
+                "description": "Plug-and-play SDK compatible with Unity and Unreal Engine. Integration in less than 48 hours.",
+                "features": [
+                    "Complete documentation",
+                    "Dedicated support"
+                ]
+            },
+            "control": {
+                "title": "Total Control",
+                "description": "You decide which ads are shown. Protect your players' experience without being intrusive.",
+                "features": [
+                    "Content filters",
+                    "Native formats"
+                ]
+            }
+        },
+        "integrationProcess": {
+            "title": "Integration Process",
+            "steps": [
+                "Registration",
+                "Download SDK",
+                "Configure Zones",
+                "Connect Wallet",
+                "Monetize!"
+            ]
+        },
+        "cta": "REQUEST EARLY ACCESS SDK",
+        "ctaSubtext": "Priority for the first 10 integrated games • 24/7 technical support"
+    },
+    "compliance": {
+        "title": "COMPLIANCE AND PRIVACY",
+        "subtitle": "Platform designed to comply with global regulations and security standards",
+        "sections": {
+            "regulation": {
+                "title": "Global Regulation",
+                "items": [
+                    "MiCA (EU)",
+                    "GDPR",
+                    "FATF/AML",
+                    "SEC (United States)",
+                    "SFC (Colombia)"
+                ]
+            },
+            "security": {
+                "title": "Security Mechanisms",
+                "items": [
+                    "Programmable KYC/AML",
+                    "Dynamic geofencing",
+                    "zk-proofs (privacy)",
+                    "HSM/KMS for keys"
+                ]
+            },
+            "certifications": {
+                "title": "Certifications",
+                "items": [
+                    "ISO/IEC 27001 (target 2027)",
+                    "OWASP Top 10",
+                    "SOC 2 Type II",
+                    "DAO Governance (2026)"
+                ]
+            }
+        }
+    },
+    "revenueSharing": {
+        "title": "FAIR REVENUE SHARING",
+        "subtitle": "Transparent income distribution model among all stakeholders",
+        "shares": {
+            "platform": {
+                "percentage": "30%",
+                "title": "VirtuAdsAI",
+                "description": "Platform and development"
+            },
+            "users": {
+                "percentage": "25%",
+                "title": "End Users",
+                "description": "Interactions and attention"
+            },
+            "developers": {
+                "percentage": "22%",
+                "title": "Metaverse/P2E Devs",
+                "description": "Inventory and traffic"
+            },
+            "dao": {
+                "percentage": "10%",
+                "title": "DAO Pool",
+                "description": "Decentralized governance"
+            },
+            "partners": {
+                "percentage": "8%",
+                "title": "Partners/Channels",
+                "description": "Distribution and alliances"
+            },
+            "governments": {
+                "percentage": "5%",
+                "title": "Governments/Regulators",
+                "description": "Taxes and compliance"
+            }
+        },
+        "tokenomics": {
+            "title": "Tokenomics",
+            "items": {
+                "mainRail": {
+                    "title": "Main Rail",
+                    "description": "XRPL for instant payments"
+                },
+                "cbdcs": {
+                    "title": "Supported CBDCs",
+                    "description": "Bre·B (Colombia), RLUSD (Ripple)"
+                },
+                "stablecoins": {
+                    "title": "Stablecoins",
+                    "description": "USDC, USDT, PYUSD"
+                },
+                "dao": {
+                    "title": "DAO Governance",
+                    "description": "Q2 2026 (10% pool)"
+                }
+            }
+        }
+    },
+    "pilots": {
+        "title": "VALIDATION AND PILOTS",
+        "subtitle": "Strategic pilot projects to validate the platform in real scenarios",
+        "projects": {
+            "bancannabis": {
+                "name": "Bancannabis",
+                "description": "Initial pilot with NFT Ads and XRPL testnet. Tokenized medical cannabis marketplace.",
+                "status": "Q3-Q4 2025"
+            },
+            "metaverses": {
+                "name": "Decentraland & Spatial",
+                "description": "On-chain conversion traceability in virtual events and concerts in metaverses.",
+                "status": "Q4 2025"
+            },
+            "starAtlas": {
+                "name": "Star Atlas",
+                "description": "Large-scale P2E environment to validate NFT Ads and advanced in-game metrics.",
+                "status": "Q1 2026"
+            },
+            "brave": {
+                "name": "Brave Wallet",
+                "description": "Privacy-first integration with BAT ecosystem for user rewards.",
+                "status": "Q2 2026"
+            }
+        }
+    },
+    "competitiveAdvantage": {
+        "title": "COMPETITIVE ADVANTAGE",
+        "subtitle": "Comparison with traditional and existing Web3 platforms",
+        "table": {
+            "headers": {
+                "feature": "Feature",
+                "metaAds": "Meta Ads",
+                "braveAds": "Brave Ads",
+                "virtuads": "VirtuAdsAI"
+            },
+            "rows": {
+                "onChain": {
+                    "feature": "On-chain traceability",
+                    "meta": "❌",
+                    "brave": "⚠️ Limited",
+                    "virtuads": "✅ Total"
+                },
+                "fairSharing": {
+                    "feature": "Fair multi-stakeholder distribution",
+                    "meta": "❌",
+                    "brave": "⚠️ BAT only",
+                    "virtuads": "✅ 5 groups"
+                },
+                "cbdc": {
+                    "feature": "CBDC support",
+                    "meta": "❌",
+                    "brave": "❌",
+                    "virtuads": "✅ Bre·B, RLUSD"
+                },
+                "ai": {
+                    "feature": "Advanced AI agents",
+                    "meta": "⚠️ Basic",
+                    "brave": "❌",
+                    "virtuads": "✅ Complete"
+                },
+                "nft": {
+                    "feature": "NFT Ads (metaverse/P2E)",
+                    "meta": "❌",
+                    "brave": "❌",
+                    "virtuads": "✅ Native"
+                },
+                "dao": {
+                    "feature": "DAO Governance",
+                    "meta": "❌",
+                    "brave": "❌",
+                    "virtuads": "✅ 2026"
+                }
+            }
+        }
+    },
+    "roadmap": {
+        "title": "ROADMAP 2026-2030",
+        "subtitle": "Platform development and expansion phases",
+        "phases": {
+            "phase1": {
+                "title": "Phase 1: Launch",
+                "year": "2026",
+                "items": [
+                    "Official platform launch",
+                    "XRPL mainnet with CBDCs (Bre·B, RLUSD)",
+                    "First metaverse integration (Decentraland, Spatial)",
+                    "Campaign dashboard v2.0",
+                    "First 10 B2B clients"
+                ]
+            },
+            "phase2": {
+                "title": "Phase 2: Expansion",
+                "year": "2027",
+                "items": [
+                    "Integration with 5+ P2E video games",
+                    "Advanced NFT Ads (composable, dynamic)",
+                    "Chainlink CCIP on 5 chains",
+                    "Autonomous creative AI agents",
+                    "50+ active clients globally"
+                ]
+            },
+            "phase3": {
+                "title": "Phase 3: Consolidation",
+                "year": "2028",
+                "items": [
+                    "DAO governance activated",
+                    "ISO/IEC 27001 complete certification",
+                    "10+ global CBDC integrations",
+                    "Decentralized NFT Ads marketplace",
+                    "200+ enterprise clients"
+                ]
+            },
+            "phase4": {
+                "title": "Phase 4: Global Leadership",
+                "year": "2029-2030",
+                "items": [
+                    "Presence in 30+ countries",
+                    "> 5% of global digital advertising market",
+                    "Decentralized validator network",
+                    "Universal Web3 Ads SDK",
+                    "Industry standard in decentralized advertising"
+                ]
+            }
+        }
+    },
+    "footer": {
+        "brand": "VIRTUADSAI",
+        "tagline": "First Web3 decentralized advertising platform with AI and Blockchain.",
+        "product": {
+            "title": "Product",
+            "links": {
+                "technology": "Technology",
+                "useCases": "Use Cases",
+                "roadmap": "Roadmap",
+                "pilots": "Pilots"
+            }
+        },
+        "company": {
+            "title": "Company",
+            "links": {
+                "blog": "Blog",
+                "whitepaper": "Whitepaper",
+                "careers": "Careers",
+                "contact": "Contact"
+            }
+        },
+        "follow": "Follow Us",
+        "copyright": "© 2025 VirtuAdsAI. All rights reserved."
+    }
+}

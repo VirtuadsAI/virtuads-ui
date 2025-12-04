@@ -1,0 +1,421 @@
+{
+    "header": {
+        "brand": "VIRTUADSAI",
+        "nav": {
+            "home": "首页",
+            "technology": "技术",
+            "useCases": "用例",
+            "roadmap": "路线图",
+            "pilots": "试点"
+        },
+        "betaAccess": "申请测试版访问"
+    },
+    "hero": {
+        "badge": "首个Web3去中心化广告平台",
+        "title": "Web3广告 结合AI和区块链",
+        "subtitle": "在网络、元宇宙和P2E游戏中自动化数字营销活动",
+        "technologies": "XRPL (Ripple) • Chainlink • AI代理 • Brave/BAT • CBDCs",
+        "ctaPrimary": "加入革命",
+        "ctaSecondary": "查看白皮书"
+    },
+    "problemSolution": {
+        "problemTitle": "问题",
+        "problems": {
+            "centralized": {
+                "title": "中心化主导",
+                "description": "谷歌和Meta控制着>70%的数字广告市场"
+            },
+            "transparency": {
+                "title": "缺乏透明度",
+                "description": "不透明的指标和不公平的收入分配"
+            },
+            "exclusion": {
+                "title": "价值排除",
+                "description": "用户和政府被排除在创造的价值之外"
+            }
+        },
+        "solutionTitle": "解决方案",
+        "solutionDescription": "VirtuAdsAI是Web3中首个可审计、可互操作且符合监管的广告层。",
+        "features": {
+            "transparency": "通过链上可验证转化实现完全透明",
+            "payments": "通过XRPL以稳定币和CBDCs进行可编程支付",
+            "interoperability": "通过Chainlink CCIP实现多链互操作性",
+            "privacy": "使用zk-proofs和Brave Ads的高级隐私",
+            "fairSharing": "在用户、政府、开发者和平台之间公平分配"
+        },
+        "strategicGoal": {
+            "title": "战略目标",
+            "description": "占领全球数字广告市场≥5%（6000亿美元+）"
+        }
+    },
+    "about": {
+        "title": "什么是VIRTUADSAI？",
+        "description1": "VirtuAdsAI是首个Web3去中心化广告平台，可在网络、元宇宙和Play-to-Earn（P2E）视频游戏中自动化数字营销活动。",
+        "description2": "我们集成了尖端技术，如用于即时结算的XRPL（Ripple）、用于安全预言机的Chainlink/CCIP、用于优化的AI代理以及用于隐私优先库存的Brave/BAT。",
+        "stats": {
+            "marketSize": {
+                "value": "6000亿美元+",
+                "label": "全球市场"
+            },
+            "targetCapture": {
+                "value": "≥5%",
+                "label": "占领目标"
+            }
+        }
+    },
+    "techStack": {
+        "title": "技术架构",
+        "subtitle": "用于去中心化、透明和高效广告的尖端技术栈",
+        "technologies": {
+            "xrpl": {
+                "title": "XRPL (Ripple)",
+                "description": "主要可编程支付轨道。使用稳定币（USDC、USDT）和CBDCs（RLUSD、Bre·B）在几秒钟内完成结算。"
+            },
+            "chainlink": {
+                "title": "Chainlink/CCIP",
+                "description": "用于外部数据的安全预言机、储备证明和可靠的多链互操作性。"
+            },
+            "ai": {
+                "title": "AI代理",
+                "description": "自动活动规划、实时优化、合规性和生成性创意。"
+            },
+            "brave": {
+                "title": "Brave/BAT",
+                "description": "具有用户同意的隐私优先广告库存（受协议约束）。"
+            },
+            "sdk": {
+                "title": "P2E/元宇宙SDK",
+                "description": "为Decentraland、Spatial、Star Atlas提供NFT广告、游戏内指标和实时报告。"
+            },
+            "dashboard": {
+                "title": "仪表板和API",
+                "description": "实时指标、链上审计和完整的监管报告。"
+            }
+        }
+    },
+    "useCases": {
+        "title": "用例",
+        "subtitle": "B2B和B2C的真实Web3广告应用",
+        "cases": {
+            "cbdc": {
+                "title": "CBDC Bre·B活动",
+                "description": "使用哥伦比亚中央银行数字货币（CBDC）支付活动费用。"
+            },
+            "nft": {
+                "title": "元宇宙中的NFT广告",
+                "description": "在Decentraland/Spatial的虚拟活动和音乐会中的代币化广告空间。"
+            },
+            "rewards": {
+                "title": "加密奖励",
+                "description": "用户通过与广告互动赚取BAT、稳定币和NFT徽章。"
+            },
+            "retargeting": {
+                "title": "智能重定向",
+                "description": "预言机数据（天气、物联网、事件）用于实时上下文活动。"
+            }
+        },
+        "segments": {
+            "b2b": {
+                "title": "B2B细分",
+                "items": [
+                    "全球品牌和中小企业",
+                    "银行（CBDC集成）",
+                    "P2E游戏工作室",
+                    "元宇宙开发者"
+                ]
+            },
+            "b2c": {
+                "title": "B2C细分",
+                "items": [
+                    "游戏玩家和P2E玩家",
+                    "拥有加密钱包的用户",
+                    "NFT数字创作者",
+                    "Web3早期采用者"
+                ]
+            }
+        }
+    },
+    "developers": {
+        "title": "P2E开发者",
+        "subtitle": "通过去中心化和透明的广告将您的视频游戏或元宇宙货币化",
+        "benefits": {
+            "revenue": {
+                "title": "22%收入分成",
+                "description": "比传统平台赚得更多。通过XRPL以稳定币自动支付。",
+                "features": [
+                    "即时支付",
+                    "透明仪表板"
+                ]
+            },
+            "integration": {
+                "title": "简单集成",
+                "description": "与Unity和Unreal Engine兼容的即插即用SDK。在48小时内完成集成。",
+                "features": [
+                    "完整文档",
+                    "专属支持"
+                ]
+            },
+            "control": {
+                "title": "完全控制",
+                "description": "您决定显示哪些广告。在不打扰的情况下保护玩家体验。",
+                "features": [
+                    "内容过滤器",
+                    "原生格式"
+                ]
+            }
+        },
+        "integrationProcess": {
+            "title": "集成流程",
+            "steps": [
+                "注册",
+                "下载SDK",
+                "配置区域",
+                "连接钱包",
+                "开始盈利！"
+            ]
+        },
+        "cta": "申请早期访问SDK",
+        "ctaSubtext": "前10个集成游戏优先 • 24/7技术支持"
+    },
+    "compliance": {
+        "title": "合规性和隐私",
+        "subtitle": "旨在符合全球法规和安全标准的平台",
+        "sections": {
+            "regulation": {
+                "title": "全球监管",
+                "items": [
+                    "MiCA（欧盟）",
+                    "GDPR",
+                    "FATF/AML",
+                    "SEC（美国）",
+                    "SFC（哥伦比亚）"
+                ]
+            },
+            "security": {
+                "title": "安全机制",
+                "items": [
+                    "可编程KYC/AML",
+                    "动态地理围栏",
+                    "zk-proofs（隐私）",
+                    "用于密钥的HSM/KMS"
+                ]
+            },
+            "certifications": {
+                "title": "认证",
+                "items": [
+                    "ISO/IEC 27001（目标2027）",
+                    "OWASP前10名",
+                    "SOC 2 Type II",
+                    "DAO治理（2026）"
+                ]
+            }
+        }
+    },
+    "revenueSharing": {
+        "title": "公平收入分配",
+        "subtitle": "所有利益相关者之间的透明收入分配模式",
+        "shares": {
+            "platform": {
+                "percentage": "30%",
+                "title": "VirtuAdsAI",
+                "description": "平台和开发"
+            },
+            "users": {
+                "percentage": "25%",
+                "title": "最终用户",
+                "description": "互动和关注"
+            },
+            "developers": {
+                "percentage": "22%",
+                "title": "元宇宙/P2E开发者",
+                "description": "库存和流量"
+            },
+            "dao": {
+                "percentage": "10%",
+                "title": "DAO池",
+                "description": "去中心化治理"
+            },
+            "partners": {
+                "percentage": "8%",
+                "title": "合作伙伴/渠道",
+                "description": "分销和联盟"
+            },
+            "governments": {
+                "percentage": "5%",
+                "title": "政府/监管机构",
+                "description": "税收和合规"
+            }
+        },
+        "tokenomics": {
+            "title": "代币经济学",
+            "items": {
+                "mainRail": {
+                    "title": "主要轨道",
+                    "description": "XRPL用于即时支付"
+                },
+                "cbdcs": {
+                    "title": "支持的CBDCs",
+                    "description": "Bre·B（哥伦比亚）、RLUSD（Ripple）"
+                },
+                "stablecoins": {
+                    "title": "稳定币",
+                    "description": "USDC、USDT、PYUSD"
+                },
+                "dao": {
+                    "title": "DAO治理",
+                    "description": "2026年第二季度（10%池）"
+                }
+            }
+        }
+    },
+    "pilots": {
+        "title": "验证和试点",
+        "subtitle": "在真实场景中验证平台的战略试点项目",
+        "projects": {
+            "bancannabis": {
+                "name": "Bancannabis",
+                "description": "使用NFT广告和XRPL测试网的初始试点。代币化医用大麻市场。",
+                "status": "2025年第三至第四季度"
+            },
+            "metaverses": {
+                "name": "Decentraland和Spatial",
+                "description": "元宇宙中虚拟活动和音乐会的链上转化可追溯性。",
+                "status": "2025年第四季度"
+            },
+            "starAtlas": {
+                "name": "Star Atlas",
+                "description": "大规模P2E环境，用于验证NFT广告和高级游戏内指标。",
+                "status": "2026年第一季度"
+            },
+            "brave": {
+                "name": "Brave钱包",
+                "description": "与BAT生态系统的隐私优先集成，用于用户奖励。",
+                "status": "2026年第二季度"
+            }
+        }
+    },
+    "competitiveAdvantage": {
+        "title": "竞争优势",
+        "subtitle": "与传统和现有Web3平台的比较",
+        "table": {
+            "headers": {
+                "feature": "特征",
+                "metaAds": "Meta广告",
+                "braveAds": "Brave广告",
+                "virtuads": "VirtuAdsAI"
+            },
+            "rows": {
+                "onChain": {
+                    "feature": "链上可追溯性",
+                    "meta": "❌",
+                    "brave": "⚠️ 有限",
+                    "virtuads": "✅ 完全"
+                },
+                "fairSharing": {
+                    "feature": "公平的多方分配",
+                    "meta": "❌",
+                    "brave": "⚠️ 仅BAT",
+                    "virtuads": "✅ 5组"
+                },
+                "cbdc": {
+                    "feature": "CBDC支持",
+                    "meta": "❌",
+                    "brave": "❌",
+                    "virtuads": "✅ Bre·B、RLUSD"
+                },
+                "ai": {
+                    "feature": "高级AI代理",
+                    "meta": "⚠️ 基础",
+                    "brave": "❌",
+                    "virtuads": "✅ 完整"
+                },
+                "nft": {
+                    "feature": "NFT广告（元宇宙/P2E）",
+                    "meta": "❌",
+                    "brave": "❌",
+                    "virtuads": "✅ 原生"
+                },
+                "dao": {
+                    "feature": "DAO治理",
+                    "meta": "❌",
+                    "brave": "❌",
+                    "virtuads": "✅ 2026"
+                }
+            }
+        }
+    },
+    "roadmap": {
+        "title": "路线图 2026-2030",
+        "subtitle": "平台开发和扩展阶段",
+        "phases": {
+            "phase1": {
+                "title": "第一阶段：启动",
+                "year": "2026",
+                "items": [
+                    "官方平台启动",
+                    "XRPL主网与CBDCs（Bre·B、RLUSD）",
+                    "首次元宇宙集成（Decentraland、Spatial）",
+                    "活动仪表板v2.0",
+                    "首批10个B2B客户"
+                ]
+            },
+            "phase2": {
+                "title": "第二阶段：扩展",
+                "year": "2027",
+                "items": [
+                    "与5+个P2E视频游戏集成",
+                    "高级NFT广告（可组合、动态）",
+                    "Chainlink CCIP在5条链上",
+                    "自主创意AI代理",
+                    "全球50+活跃客户"
+                ]
+            },
+            "phase3": {
+                "title": "第三阶段：巩固",
+                "year": "2028",
+                "items": [
+                    "激活DAO治理",
+                    "ISO/IEC 27001完整认证",
+                    "10+个全球CBDC集成",
+                    "去中心化NFT广告市场",
+                    "200+企业客户"
+                ]
+            },
+            "phase4": {
+                "title": "第四阶段：全球领导",
+                "year": "2029-2030",
+                "items": [
+                    "在30+个国家开展业务",
+                    "> 全球数字广告市场的5%",
+                    "去中心化验证者网络",
+                    "通用Web3广告SDK",
+                    "去中心化广告的行业标准"
+                ]
+            }
+        }
+    },
+    "footer": {
+        "brand": "VIRTUADSAI",
+        "tagline": "首个结合AI和区块链的Web3去中心化广告平台。",
+        "product": {
+            "title": "产品",
+            "links": {
+                "technology": "技术",
+                "useCases": "用例",
+                "roadmap": "路线图",
+                "pilots": "试点"
+            }
+        },
+        "company": {
+            "title": "公司",
+            "links": {
+                "blog": "博客",
+                "whitepaper": "白皮书",
+                "careers": "职业机会",
+                "contact": "联系我们"
+            }
+        },
+        "follow": "关注我们",
+        "copyright": "© 2025 VirtuAdsAI。保留所有权利。"
+    }
+}

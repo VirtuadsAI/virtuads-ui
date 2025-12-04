@@ -112,4 +112,17 @@
   .glow-green:hover {
     box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
   }
+
+  /* RTL Support for Arabic */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+
+  [dir="rtl"] .text-left {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-right {
+    text-align: left;
+  }
 }

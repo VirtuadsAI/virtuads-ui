@@ -1,36 +1,40 @@
-import React from 'react';
+import { useTranslation } from 'react-i18next';
 import PilotCard from '../ui/PilotCard';
 
-const Pilots = () => (
-    <section id="pilotos" className="py-24">
-        <h2 className="text-4xl font-bold text-center mb-4">VALIDACIÓN Y PILOTOS</h2>
-        <p className="text-center text-brand-gray mb-16 max-w-2xl mx-auto">
-            Proyectos piloto estratégicos para validar la plataforma en escenarios reales
-        </p>
+const Pilots = () => {
+    const { t } = useTranslation();
 
-        <div className="grid md:grid-cols-2 gap-8">
-            <PilotCard
-                name="Bancannabis"
-                description="Piloto inicial con NFT Ads y XRPL testnet. Marketplace cannabis medicinal tokenizado."
-                status="Q3-Q4 2025"
-            />
-            <PilotCard
-                name="Decentraland & Spatial"
-                description="Trazabilidad on-chain de conversiones en eventos virtuales y conciertos en metaversos."
-                status="Q4 2025"
-            />
-            <PilotCard
-                name="Star Atlas"
-                description="Entorno P2E de gran escala para validar NFT Ads y métricas in-game avanzadas."
-                status="Q1 2026"
-            />
-            <PilotCard
-                name="Brave Wallet"
-                description="Integración privacy-first con ecosistema BAT para recompensas a usuarios."
-                status="Q2 2026"
-            />
-        </div>
-    </section>
-);
+    return (
+        <section id="pilotos" className="py-24">
+            <h2 className="text-4xl font-bold text-center mb-4">{t('pilots.title')}</h2>
+            <p className="text-center text-brand-gray mb-16 max-w-2xl mx-auto">
+                {t('pilots.subtitle')}
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8">
+                <PilotCard
+                    name={t('pilots.projects.bancannabis.name')}
+                    description={t('pilots.projects.bancannabis.description')}
+                    status={t('pilots.projects.bancannabis.status')}
+                />
+                <PilotCard
+                    name={t('pilots.projects.metaverses.name')}
+                    description={t('pilots.projects.metaverses.description')}
+                    status={t('pilots.projects.metaverses.status')}
+                />
+                <PilotCard
+                    name={t('pilots.projects.starAtlas.name')}
+                    description={t('pilots.projects.starAtlas.description')}
+                    status={t('pilots.projects.starAtlas.status')}
+                />
+                <PilotCard
+                    name={t('pilots.projects.brave.name')}
+                    description={t('pilots.projects.brave.description')}
+                    status={t('pilots.projects.brave.status')}
+                />
+            </div>
+        </section>
+    );
+};
 
 export default Pilots;
