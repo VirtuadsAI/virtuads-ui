@@ -417,5 +417,226 @@
         },
         "follow": "Síguenos",
         "copyright": "© 2025 VirtuAdsAI. Todos los derechos reservados."
+    },
+    "whitepaper": {
+        "title": "Whitepaper de VirtuAdsAI",
+        "subtitle": "Primera Plataforma Web3 de Publicidad Descentralizada con IA y Blockchain",
+        "toc": {
+            "title": "Tabla de Contenidos",
+            "item1": "Resumen Ejecutivo",
+            "item2": "Planteamiento del Problema",
+            "item3": "Descripción de la Solución",
+            "item4": "Arquitectura Tecnológica",
+            "item5": "Tokenómica y Distribución de Ingresos",
+            "item6": "Roadmap",
+            "item7": "Cumplimiento y Seguridad",
+            "item8": "Conclusión"
+        },
+        "section1": {
+            "title": "Resumen Ejecutivo",
+            "p1": "VirtuAdsAI representa un cambio de paradigma en la publicidad digital, introduciendo la primera plataforma publicitaria verdaderamente descentralizada, transparente y equitativa construida sobre tecnologías Web3. Al aprovechar XRPL (Ripple), Chainlink CCIP, agentes de IA y soluciones que priorizan la privacidad como Brave/BAT, estamos creando un ecosistema donde anunciantes, editores, usuarios e incluso gobiernos se benefician equitativamente del valor publicitario.",
+            "p2": "El mercado global de publicidad digital está valorado en más de $600 mil millones anuales, pero sigue dominado por entidades centralizadas que controlan datos, métricas y distribución de ingresos. VirtuAdsAI tiene como objetivo capturar al menos el 5% de este mercado ofreciendo conversiones verificables on-chain, pagos programables en stablecoins y CBDCs, y un modelo de ingresos justo multi-stakeholder.",
+            "p3": "Nuestra plataforma habilita formatos publicitarios revolucionarios incluyendo NFT Ads en metaversos, integraciones de juegos P2E y campañas impulsadas por CBDCs, posicionando a VirtuAdsAI en la intersección de Web3, IA y cumplimiento regulatorio."
+        },
+        "section2": {
+            "title": "Planteamiento del Problema",
+            "intro": "El panorama actual de la publicidad digital sufre de problemas estructurales críticos que limitan el crecimiento, la innovación y la distribución justa del valor:",
+            "centralized": {
+                "title": "Dominio Centralizado",
+                "description": "Google y Meta controlan más del 70% del mercado de publicidad digital, creando condiciones monopolísticas que limitan la competencia y la innovación."
+            },
+            "transparency": {
+                "title": "Falta de Transparencia",
+                "description": "Métricas opacas, algoritmos de caja negra y modelos de atribución poco claros dificultan que los anunciantes verifiquen el rendimiento de las campañas y el ROI."
+            },
+            "exclusion": {
+                "title": "Exclusión de Valor",
+                "description": "Los usuarios finales y los gobiernos están completamente excluidos del valor generado por su atención y datos, mientras que los editores reciben partes injustas de los ingresos."
+            }
+        },
+        "section3": {
+            "title": "Descripción de la Solución",
+            "p1": "VirtuAdsAI es la primera capa publicitaria auditable, interoperable y regulatoria-compliant en Web3. Nuestra plataforma aborda los problemas fundamentales de la publicidad tradicional a través de la tecnología blockchain, inteligencia artificial y gobernanza descentralizada.",
+            "features": {
+                "transparency": "Transparencia completa con conversiones verificables on-chain y registros de auditoría inmutables",
+                "payments": "Pagos programables en stablecoins (USDC, USDT, PYUSD) y CBDCs (Bre·B, RLUSD) vía XRPL para liquidación instantánea",
+                "interoperability": "Compatibilidad multi-cadena a través de Chainlink CCIP, habilitando campañas en múltiples ecosistemas blockchain",
+                "privacy": "Protección avanzada de privacidad con pruebas de conocimiento cero e integración con navegadores que priorizan la privacidad como Brave",
+                "fairSharing": "Distribución justa de ingresos entre usuarios (25%), desarrolladores (22%), plataforma (30%), DAO (10%), partners (8%) y gobiernos (5%)"
+            }
+        },
+        "section4": {
+            "title": "Arquitectura Tecnológica",
+            "intro": "VirtuAdsAI integra múltiples tecnologías de vanguardia de blockchain e IA para ofrecer una experiencia publicitaria superior:",
+            "xrpl": {
+                "title": "XRPL (Ripple)",
+                "description": "Rail principal de pagos para transacciones programables. La liquidación ocurre en segundos con tarifas mínimas, soportando stablecoins y CBDCs. El DEX integrado de XRPL habilita conversión de moneda instantánea y liquidez."
+            },
+            "chainlink": {
+                "title": "Chainlink/CCIP",
+                "description": "Oráculos seguros para feeds de datos externos (clima, IoT, datos de mercado) y verificación de Proof of Reserve. CCIP habilita interoperabilidad cross-chain confiable, permitiendo que las campañas abarquen múltiples redes blockchain."
+            },
+            "ai": {
+                "title": "Agentes IA",
+                "description": "Inteligencia artificial autónoma para planificación automática de campañas, optimización en tiempo real, asignación de presupuesto, generación creativa y verificación de cumplimiento regulatorio. Nuestra IA aprende continuamente del rendimiento de las campañas para mejorar resultados."
+            },
+            "brave": {
+                "title": "Brave/BAT",
+                "description": "Inventario publicitario que prioriza la privacidad a través de la integración con el navegador Brave y el ecosistema Basic Attention Token. Los usuarios optan por ver anuncios y son recompensados directamente, manteniendo control total de privacidad."
+            },
+            "sdk": {
+                "title": "SDK P2E/Metaverso",
+                "description": "SDK plug-and-play para Unity y Unreal Engine que habilita NFT Ads, analítica in-game y reportes en tiempo real para Decentraland, Spatial, Star Atlas y otros entornos virtuales."
+            }
+        },
+        "section5": {
+            "title": "Tokenómica y Distribución de Ingresos",
+            "intro": "VirtuAdsAI implementa un modelo transparente y equitativo de reparto de ingresos que asegura que todos los stakeholders se beneficien del crecimiento de la plataforma:",
+            "platform": {
+                "title": "VirtuAdsAI",
+                "percentage": "30%",
+                "description": "Desarrollo de plataforma, mantenimiento de infraestructura y crecimiento del ecosistema"
+            },
+            "users": {
+                "title": "Usuarios Finales",
+                "percentage": "25%",
+                "description": "Recompensas por atención, interacciones y contribución de datos"
+            },
+            "developers": {
+                "title": "Desarrolladores",
+                "percentage": "22%",
+                "description": "Desarrolladores de metaversos y juegos P2E que proveen inventario publicitario"
+            },
+            "dao": {
+                "title": "Pool DAO",
+                "percentage": "10%",
+                "description": "Tesorería de gobernanza descentralizada para iniciativas impulsadas por la comunidad"
+            },
+            "partners": {
+                "title": "Partners",
+                "percentage": "8%",
+                "description": "Partners de distribución y alianzas estratégicas"
+            },
+            "governments": {
+                "title": "Gobiernos",
+                "percentage": "5%",
+                "description": "Cumplimiento regulatorio, impuestos y contribuciones al beneficio público"
+            }
+        },
+        "section6": {
+            "title": "Roadmap 2026-2030",
+            "phase1": {
+                "title": "Fase 1: Lanzamiento",
+                "year": "2026",
+                "items": [
+                    "Lanzamiento oficial de la plataforma con integración completa de XRPL mainnet",
+                    "Soporte para CBDCs (Bre·B de Colombia, RLUSD de Ripple)",
+                    "Primeras integraciones con metaversos (Decentraland, Spatial)",
+                    "Dashboard de campañas v2.0 con analítica avanzada",
+                    "Onboarding de los primeros 10 clientes B2B enterprise"
+                ]
+            },
+            "phase2": {
+                "title": "Fase 2: Expansión",
+                "year": "2027",
+                "items": [
+                    "Integración con 5+ videojuegos P2E principales",
+                    "NFT Ads avanzados (componibles, dinámicos, programables)",
+                    "Despliegue de Chainlink CCIP en 5 redes blockchain",
+                    "Agentes IA creativos autónomos para generación de anuncios",
+                    "Expansión global a 50+ clientes enterprise activos"
+                ]
+            },
+            "phase3": {
+                "title": "Fase 3: Consolidación",
+                "year": "2028",
+                "items": [
+                    "Activación de estructura de gobernanza DAO",
+                    "Certificación de seguridad ISO/IEC 27001 completa",
+                    "Integración con 10+ CBDCs globales",
+                    "Lanzamiento de marketplace descentralizado de NFT Ads",
+                    "Escalamiento a 200+ clientes enterprise globalmente"
+                ]
+            },
+            "phase4": {
+                "title": "Fase 4: Liderazgo Global",
+                "year": "2029-2030",
+                "items": [
+                    "Presencia en 30+ países con cumplimiento local",
+                    "Logro de >5% de cuota del mercado global de publicidad digital",
+                    "Red de validadores descentralizados para gobernanza de la plataforma",
+                    "SDK universal de Web3 Ads soportando todas las plataformas principales",
+                    "Estándar de industria en publicidad descentralizada"
+                ]
+            }
+        },
+        "section7": {
+            "title": "Cumplimiento y Seguridad",
+            "intro": "VirtuAdsAI está diseñado desde el principio para cumplir con los requisitos regulatorios globales y los más altos estándares de seguridad:",
+            "regulation": {
+                "title": "Cumplimiento Regulatorio",
+                "items": [
+                    "MiCA (Markets in Crypto-Assets) - Unión Europea",
+                    "GDPR (General Data Protection Regulation)",
+                    "FATF/AML (Financial Action Task Force / Anti-Money Laundering)",
+                    "SEC (Securities and Exchange Commission) - Estados Unidos",
+                    "SFC (Superintendencia Financiera de Colombia) - Colombia"
+                ]
+            },
+            "security": {
+                "title": "Mecanismos de Seguridad",
+                "items": [
+                    "KYC/AML programable con verificación automatizada",
+                    "Geofencing dinámico para cumplimiento específico por jurisdicción",
+                    "Pruebas de conocimiento cero para verificación que preserva la privacidad",
+                    "HSM/KMS (Hardware/Key Management Systems) para protección de claves criptográficas"
+                ]
+            },
+            "certifications": {
+                "title": "Certificaciones",
+                "items": [
+                    "ISO/IEC 27001 Seguridad de la Información (objetivo Q2 2027)",
+                    "Cumplimiento de mejores prácticas de seguridad OWASP Top 10",
+                    "Certificación de auditoría SOC 2 Type II",
+                    "Marco de gobernanza DAO (activación Q2 2026)"
+                ]
+            }
+        },
+        "section8": {
+            "title": "Conclusión",
+            "p1": "VirtuAdsAI representa el futuro de la publicidad digital—un futuro donde la transparencia, equidad e innovación reemplazan la opacidad, monopolio y estancamiento. Al combinar la programabilidad de blockchain, la inteligencia de la IA y la escala de las redes de pago globales, estamos construyendo un ecosistema publicitario que beneficia a todos, no solo a unas pocas plataformas centralizadas.",
+            "p2": "Nuestra misión es capturar al menos el 5% del mercado global de publicidad digital de $600+ mil millones mientras creamos un sistema más equitativo, transparente y eficiente para anunciantes, editores, usuarios y gobiernos. Con tecnología de vanguardia, fuerte cumplimiento regulatorio y un modelo de ingresos justo, VirtuAdsAI está posicionado para convertirse en el estándar de la industria para publicidad Web3.",
+            "cta": "Únete a nosotros para revolucionar la publicidad digital",
+            "ctaButton": "Comenzar"
+        }
+    },
+    "developersPage": {
+        "title": "Portal de Desarrolladores",
+        "subtitle": "Integra publicidad Web3 en tus juegos y metaversos en minutos.",
+        "integration": {
+            "title": "Integración Rápida"
+        },
+        "steps": {
+            "step1": {
+                "title": "Instalar SDK",
+                "description": "Añade nuestro paquete a tu proyecto"
+            },
+            "step2": {
+                "title": "Inicializar",
+                "description": "Configura con tu API Key"
+            },
+            "step3": {
+                "title": "Monetizar",
+                "description": "Empieza a mostrar anuncios y ganar"
+            }
+        },
+        "apiKey": {
+            "title": "Generar API Key",
+            "emailLabel": "Email del Desarrollador",
+            "generateBtn": "Generar Key",
+            "successLabel": "Tu API Key",
+            "securityNote": "Mantén esta clave secreta. No se mostrará de nuevo.",
+            "generateNew": "Generar nueva clave"
+        }
     }
 }

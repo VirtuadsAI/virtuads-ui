@@ -1,5 +1,6 @@
 import { Linkedin, Instagram, Youtube } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import logoVirtu from '../../assets/logo-virtu.jpg';
 import LanguageSelector from '../ui/LanguageSelector';
 
@@ -17,11 +18,12 @@ const Header = () => {
                 <div className="flex-grow"></div>
 
                 <nav className="hidden md:flex items-center space-x-6 text-sm">
-                    <a href="#inicio" className="hover:text-brand-green transition-colors">{t('header.nav.home')}</a>
-                    <a href="#tecnologia" className="hover:text-brand-green transition-colors">{t('header.nav.technology')}</a>
-                    <a href="#casos-uso" className="hover:text-brand-green transition-colors whitespace-nowrap">{t('header.nav.useCases')}</a>
-                    <a href="#roadmap" className="hover:text-brand-green transition-colors">{t('header.nav.roadmap')}</a>
-                    <a href="#pilotos" className="hover:text-brand-green transition-colors">{t('header.nav.pilots')}</a>
+                    <a href="/#inicio" className="hover:text-brand-green transition-colors">{t('header.nav.home')}</a>
+                    <a href="/#tecnologia" className="hover:text-brand-green transition-colors">{t('header.nav.technology')}</a>
+                    <a href="/#casos-uso" className="hover:text-brand-green transition-colors whitespace-nowrap">{t('header.nav.useCases')}</a>
+                    <a href="/#roadmap" className="hover:text-brand-green transition-colors">{t('header.nav.roadmap')}</a>
+                    <a href="/#pilotos" className="hover:text-brand-green transition-colors">{t('header.nav.pilots')}</a>
+                    <Link to="/developers" className="hover:text-brand-green transition-colors text-brand-green font-medium">{t('developersPage.title')}</Link>
                 </nav>
 
                 <button className="hidden md:block border-2 border-brand-green text-brand-green hover:bg-brand-green hover:text-brand-dark px-3 py-1.5 rounded-md font-medium transition-all hover:scale-105 text-xs whitespace-nowrap ml-4">

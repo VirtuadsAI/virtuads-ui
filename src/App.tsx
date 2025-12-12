@@ -1,37 +1,25 @@
-import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Hero from './components/sections/Hero';
-import ProblemSolution from './components/sections/ProblemSolution';
-import About from './components/sections/About';
-import TechStack from './components/sections/TechStack';
-import UseCases from './components/sections/UseCases';
-import Developers from './components/sections/Developers';
-import Compliance from './components/sections/Compliance';
-import RevenueSharing from './components/sections/RevenueSharing';
-import Pilots from './components/sections/Pilots';
-import CompetitiveAdvantage from './components/sections/CompetitiveAdvantage';
-import Roadmap from './components/sections/Roadmap';
+import HomePage from './pages/HomePage';
+import DevelopersPage from './pages/DevelopersPage';
+import WhitepaperPage from './pages/WhitepaperPage';
 
 function App() {
   return (
-    <div className="bg-brand-dark text-brand-light font-sans">
-      <Header />
-      <Hero />
-      <div className="container mx-auto px-6">
-        <ProblemSolution />
-        <About />
-        <TechStack />
-        <UseCases />
-        <Developers />
-        <Compliance />
-        <RevenueSharing />
-        <Pilots />
-        <CompetitiveAdvantage />
-        <Roadmap />
+    <Router>
+      <div className="bg-brand-dark text-brand-light font-sans flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/developers" element={<DevelopersPage />} />
+            <Route path="/whitepaper" element={<WhitepaperPage />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

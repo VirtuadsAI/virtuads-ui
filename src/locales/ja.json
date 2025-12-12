@@ -417,5 +417,34 @@
         },
         "follow": "フォローする",
         "copyright": "© 2025 VirtuAdsAI. All rights reserved."
+    },
+    "developersPage": {
+        "title": "開発者ポータル",
+        "subtitle": "数分でWeb3広告をゲームやメタバースに統合します。",
+        "integration": {
+            "title": "クイック統合"
+        },
+        "steps": {
+            "step1": {
+                "title": "SDKのインストール",
+                "description": "プロジェクトにパッケージを追加"
+            },
+            "step2": {
+                "title": "初期化",
+                "description": "APIキーで設定"
+            },
+            "step3": {
+                "title": "収益化",
+                "description": "広告を表示して収益を開始"
+            }
+        },
+        "apiKey": {
+            "title": "APIキーの生成",
+            "emailLabel": "開発者メール",
+            "generateBtn": "キーを生成",
+            "successLabel": "あなたのAPIキー",
+            "securityNote": "このキーは秘密にしてください。再表示されません。",
+            "generateNew": "新しいキーを生成"
+        }
     }
 }

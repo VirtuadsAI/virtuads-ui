@@ -417,5 +417,34 @@
         },
         "follow": "تابعنا",
         "copyright": "© 2025 VirtuAdsAI. جميع الحقوق محفوظة."
+    },
+    "developersPage": {
+        "title": "بوابة المطورين",
+        "subtitle": "دمج إعلانات Web3 في ألعابك وعوالمك الافتراضية في دقائق.",
+        "integration": {
+            "title": "تكامل سريع"
+        },
+        "steps": {
+            "step1": {
+                "title": "تثبيت SDK",
+                "description": "أضف حزمتنا إلى مشروعك"
+            },
+            "step2": {
+                "title": "تهيئة",
+                "description": "قم بالتكوين باستخدام مفتاح API الخاص بك"
+            },
+            "step3": {
+                "title": "تحقيق الدخل",
+                "description": "ابدأ في عرض الإعلانات والربح"
+            }
+        },
+        "apiKey": {
+            "title": "توليد مفتاح API",
+            "emailLabel": "البريد الإلكتروني للمطور",
+            "generateBtn": "توليد المفتاح",
+            "successLabel": "مفتاح API الخاص بك",
+            "securityNote": "احتفظ بهذا المفتاح سراً. لن يتم عرضه مرة أخرى.",
+            "generateNew": "توليد مفتاح جديد"
+        }
     }
 }

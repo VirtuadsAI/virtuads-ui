@@ -417,5 +417,34 @@
         },
         "follow": "关注我们",
         "copyright": "© 2025 VirtuAdsAI。保留所有权利。"
+    },
+    "developersPage": {
+        "title": "开发者门户",
+        "subtitle": "几分钟内将 Web3 广告集成到您的游戏和元宇宙中。",
+        "integration": {
+            "title": "快速集成"
+        },
+        "steps": {
+            "step1": {
+                "title": "安装 SDK",
+                "description": "将我们的包添加到您的项目中"
+            },
+            "step2": {
+                "title": "初始化",
+                "description": "使用您的 API 密钥进行配置"
+            },
+            "step3": {
+                "title": "货币化",
+                "description": "开始展示广告并赚取收益"
+            }
+        },
+        "apiKey": {
+            "title": "生成 API 密钥",
+            "emailLabel": "开发者邮箱",
+            "generateBtn": "生成密钥",
+            "successLabel": "您的 API 密钥",
+            "securityNote": "请妥善保管此密钥。它将不再显示。",
+            "generateNew": "生成新密钥"
+        }
     }
 }

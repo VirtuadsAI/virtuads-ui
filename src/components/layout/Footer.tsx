@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { Linkedin, Instagram, Youtube } from 'lucide-react';
 import logoVirtu from '../../assets/logo-virtu.jpg';
 
@@ -31,7 +32,7 @@ const Footer = () => {
                         <h4 className="font-bold mb-4">{t('footer.company.title')}</h4>
                         <ul className="space-y-2 text-brand-gray text-sm">
                             <li><a href="#" className="hover:text-brand-green transition-colors">{t('footer.company.links.blog')}</a></li>
-                            <li><a href="#" className="hover:text-brand-green transition-colors">{t('footer.company.links.whitepaper')}</a></li>
+                            <li><Link to="/whitepaper" className="hover:text-brand-green transition-colors">{t('footer.company.links.whitepaper')}</Link></li>
                             <li><a href="#" className="hover:text-brand-green transition-colors">{t('footer.company.links.careers')}</a></li>
                             <li><a href="#" className="hover:text-brand-green transition-colors">{t('footer.company.links.contact')}</a></li>
                         </ul>
