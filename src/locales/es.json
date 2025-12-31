@@ -6,7 +6,9 @@
             "technology": "Tecnología",
             "useCases": "Casos de Uso",
             "roadmap": "Roadmap",
-            "pilots": "Pilotos"
+            "pilots": "Pilotos",
+            "whitepaper": "Whitepaper",
+            "developers": "Desarrolladores"
         },
         "betaAccess": "SOLICITAR ACCESO BETA"
     },
@@ -90,6 +92,10 @@
             "dashboard": {
                 "title": "Dashboard & APIs",
                 "description": "Métricas en tiempo real, auditoría on-chain y reporting regulatorio completo."
+            },
+            "orchestration": {
+                "title": "Capa de Orquestación (n8n)",
+                "description": "Automatización autónoma que coordina eventos entre SDK, agentes IA y el Ledger de XRPL."
             }
         }
     },
@@ -421,6 +427,8 @@
     "whitepaper": {
         "title": "Whitepaper de VirtuAdsAI",
         "subtitle": "Primera Plataforma Web3 de Publicidad Descentralizada con IA y Blockchain",
+        "businessTab": "Whitepaper de Negocio",
+        "technicalTab": "Whitepaper Técnico",
         "toc": {
             "title": "Tabla de Contenidos",
             "item1": "Resumen Ejecutivo",
@@ -487,6 +495,10 @@
             "sdk": {
                 "title": "SDK P2E/Metaverso",
                 "description": "SDK plug-and-play para Unity y Unreal Engine que habilita NFT Ads, analítica in-game y reportes en tiempo real para Decentraland, Spatial, Star Atlas y otros entornos virtuales."
+            },
+            "orchestration": {
+                "title": "Capa de Orquestación (n8n)",
+                "description": "VirtuAdsAI utiliza una arquitectura de flujos de trabajo (n8n) para coordinar eventos en tiempo real. Esta capa actúa como el sistema nervioso central, asegurando que las decisiones de la IA se ejecuten en la blockchain y se reflejen en el SDK sin latencia."
             }
         },
         "section5": {
@@ -608,6 +620,81 @@
             "p2": "Nuestra misión es capturar al menos el 5% del mercado global de publicidad digital de $600+ mil millones mientras creamos un sistema más equitativo, transparente y eficiente para anunciantes, editores, usuarios y gobiernos. Con tecnología de vanguardia, fuerte cumplimiento regulatorio y un modelo de ingresos justo, VirtuAdsAI está posicionado para convertirse en el estándar de la industria para publicidad Web3.",
             "cta": "Únete a nosotros para revolucionar la publicidad digital",
             "ctaButton": "Comenzar"
+        }
+    },
+    "campaign": {
+        "wizard": {
+            "title": "Nueva Campaña IA",
+            "step1": {
+                "title": "Detalles de la Campaña",
+                "description": "Configura los parámetros básicos de tu campaña"
+            },
+            "step2": {
+                "title": "Procesando con IA",
+                "description": "Los agentes de IA están analizando tu campaña"
+            },
+            "step3": {
+                "title": "Recomendaciones IA",
+                "description": "Optimizaciones sugeridas por la inteligencia artificial"
+            },
+            "step4": {
+                "title": "Confirmación",
+                "description": "Revisa y confirma tu campaña"
+            },
+            "fields": {
+                "name": {
+                    "label": "Nombre de la Campaña",
+                    "placeholder": "Ej: NFT Metaverse Launch"
+                },
+                "budget": {
+                    "label": "Presupuesto (XRP)",
+                    "placeholder": "100"
+                },
+                "objective": {
+                    "label": "Objetivo",
+                    "options": {
+                        "traffic": "Tráfico al Metaverso",
+                        "conversions": "Conversiones P2E",
+                        "awareness": "Reconocimiento de Marca"
+                    }
+                }
+            },
+            "processing": {
+                "connecting": "Conectando con n8n...",
+                "analyzing": "Agentes de IA analizando...",
+                "optimizing": "Optimizando estrategia de puja...",
+                "finalizing": "Finalizando análisis..."
+            },
+            "recommendations": {
+                "title": "Recomendaciones del Agente IA",
+                "biddingStrategy": "Estrategia de Puja",
+                "targetAudience": "Audiencia Objetivo",
+                "optimizations": "Optimizaciones Sugeridas",
+                "message": "Mensaje del Agente"
+            },
+            "confirmation": {
+                "title": "¡Campaña Lista!",
+                "summary": "Los agentes de IA han optimizado tu campaña",
+                "ready": "Tu campaña está lista para activarse en XRPL"
+            },
+            "buttons": {
+                "next": "SIGUIENTE",
+                "previous": "ANTERIOR",
+                "submit": "ACTIVAR CAMPAÑA IA",
+                "submitting": "CONECTANDO CON AGENTES...",
+                "close": "CERRAR",
+                "understood": "ENTENDIDO"
+            },
+            "success": {
+                "title": "¡Enviado con Éxito!",
+                "message": "Los agentes de IA han recibido tu campaña y están optimizando la puja en XRPL."
+            },
+            "errors": {
+                "connection": "Error al conectar con el servidor n8n. Asegúrate de que esté corriendo en el puerto 5678.",
+                "timeout": "La solicitud excedió el tiempo de espera. Por favor, intenta nuevamente.",
+                "unknown": "Error desconocido al procesar la solicitud.",
+                "required": "Este campo es requerido"
+            }
         }
     },
     "developersPage": {

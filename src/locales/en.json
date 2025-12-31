@@ -6,7 +6,9 @@
             "technology": "Technology",
             "useCases": "Use Cases",
             "roadmap": "Roadmap",
-            "pilots": "Pilots"
+            "pilots": "Pilots",
+            "whitepaper": "Whitepaper",
+            "developers": "Developers"
         },
         "betaAccess": "REQUEST BETA ACCESS"
     },
@@ -90,6 +92,10 @@
             "dashboard": {
                 "title": "Dashboard & APIs",
                 "description": "Real-time metrics, on-chain auditing and complete regulatory reporting."
+            },
+            "orchestration": {
+                "title": "Orchestration Layer (n8n)",
+                "description": "Autonomous automation coordinating events between SDK, AI agents, and the XRPL Ledger."
             }
         }
     },
@@ -421,6 +427,8 @@
     "whitepaper": {
         "title": "VirtuAdsAI Whitepaper",
         "subtitle": "First Web3 Decentralized Advertising Platform with AI and Blockchain",
+        "businessTab": "Business Whitepaper",
+        "technicalTab": "Technical Whitepaper",
         "toc": {
             "title": "Table of Contents",
             "item1": "Executive Summary",
@@ -487,6 +495,10 @@
             "sdk": {
                 "title": "P2E/Metaverse SDK",
                 "description": "Plug-and-play SDK for Unity and Unreal Engine enabling NFT Ads, in-game analytics, and real-time reporting for Decentraland, Spatial, Star Atlas, and other virtual environments."
+            },
+            "orchestration": {
+                "title": "Orchestration Layer (n8n)",
+                "description": "VirtuAdsAI uses a workflow-based architecture (n8n) to coordinate real-time events. This layer acts as the central nervous system, ensuring AI decisions are executed on-chain and reflected in the SDK with zero latency."
             }
         },
         "section5": {
@@ -608,6 +620,81 @@
             "p2": "Our mission is to capture at least 5% of the $600+ billion global digital advertising market while creating a more equitable, transparent, and efficient system for advertisers, publishers, users, and governments. With cutting-edge technology, strong regulatory compliance, and a fair revenue model, VirtuAdsAI is positioned to become the industry standard for Web3 advertising.",
             "cta": "Join us in revolutionizing digital advertising",
             "ctaButton": "Get Started"
+        }
+    },
+    "campaign": {
+        "wizard": {
+            "title": "New AI Campaign",
+            "step1": {
+                "title": "Campaign Details",
+                "description": "Configure your campaign's basic parameters"
+            },
+            "step2": {
+                "title": "AI Processing",
+                "description": "AI agents are analyzing your campaign"
+            },
+            "step3": {
+                "title": "AI Recommendations",
+                "description": "Optimizations suggested by artificial intelligence"
+            },
+            "step4": {
+                "title": "Confirmation",
+                "description": "Review and confirm your campaign"
+            },
+            "fields": {
+                "name": {
+                    "label": "Campaign Name",
+                    "placeholder": "e.g., NFT Metaverse Launch"
+                },
+                "budget": {
+                    "label": "Budget (XRP)",
+                    "placeholder": "100"
+                },
+                "objective": {
+                    "label": "Objective",
+                    "options": {
+                        "traffic": "Metaverse Traffic",
+                        "conversions": "P2E Conversions",
+                        "awareness": "Brand Awareness"
+                    }
+                }
+            },
+            "processing": {
+                "connecting": "Connecting to n8n...",
+                "analyzing": "AI agents analyzing...",
+                "optimizing": "Optimizing bidding strategy...",
+                "finalizing": "Finalizing analysis..."
+            },
+            "recommendations": {
+                "title": "AI Agent Recommendations",
+                "biddingStrategy": "Bidding Strategy",
+                "targetAudience": "Target Audience",
+                "optimizations": "Suggested Optimizations",
+                "message": "Agent Message"
+            },
+            "confirmation": {
+                "title": "Campaign Ready!",
+                "summary": "AI agents have optimized your campaign",
+                "ready": "Your campaign is ready to activate on XRPL"
+            },
+            "buttons": {
+                "next": "NEXT",
+                "previous": "PREVIOUS",
+                "submit": "ACTIVATE AI CAMPAIGN",
+                "submitting": "CONNECTING TO AGENTS...",
+                "close": "CLOSE",
+                "understood": "UNDERSTOOD"
+            },
+            "success": {
+                "title": "Successfully Submitted!",
+                "message": "AI agents have received your campaign and are optimizing the bid on XRPL."
+            },
+            "errors": {
+                "connection": "Error connecting to n8n server. Make sure it's running on port 5678.",
+                "timeout": "Request exceeded timeout. Please try again.",
+                "unknown": "Unknown error processing request.",
+                "required": "This field is required"
+            }
         }
     },
     "developersPage": {

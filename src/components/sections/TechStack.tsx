@@ -43,6 +43,11 @@ const TechStack = () => {
                     title={t('techStack.technologies.dashboard.title')}
                     description={t('techStack.technologies.dashboard.description')}
                 />
+                <TechCard
+                    icon={<Network className="h-12 w-12 text-brand-green" />}
+                    title={t('techStack.technologies.orchestration.title')}
+                    description={t('techStack.technologies.orchestration.description')}
+                />
             </div>
         </section>
     );

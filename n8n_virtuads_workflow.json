@@ -1,0 +1,91 @@
+{
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "virtuads-campaign",
+                "options": {}
+            },
+            "id": "1",
+            "name": "Webhook: Receive Campaign",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                250,
+                300
+            ],
+            "webhookId": "virtuads-id-123"
+        },
+        {
+            "parameters": {
+                "resource": "chat",
+                "model": "gpt-4o",
+                "messages": {
+                    "messageValues": [
+                        {
+                            "role": "system",
+                            "content": "Eres el Agente de Optimización de VirtuAdsAI. Tu objetivo es analizar los datos de la campaña del cliente y proponer la mejor estrategia de puja en XRPL."
+                        },
+                        {
+                            "role": "user",
+                            "content": "=Datos de la Campaña: {{ $json.body }}"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "id": "2",
+            "name": "AI Agent: Optimizer",
+            "type": "n8n-nodes-base.openAi",
+            "typeVersion": 1,
+            "position": [
+                500,
+                300
+            ],
+            "credentials": {
+                "openAiApi": {
+                    "id": "YOUR_OPENAI_CREDENTIAL_ID",
+                    "name": "OpenAI Account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "respondWith": "allEntryItems",
+                "options": {}
+            },
+            "id": "3",
+            "name": "Respond to Dashboard",
+            "type": "n8n-nodes-base.respondToWebhook",
+            "typeVersion": 1,
+            "position": [
+                750,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Webhook: Receive Campaign": {
+            "main": [
+                [
+                    {
+                        "node": "AI Agent: Optimizer",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "AI Agent: Optimizer": {
+            "main": [
+                [
+                    {
+                        "node": "Respond to Dashboard",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}

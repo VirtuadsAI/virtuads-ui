@@ -159,6 +159,115 @@ await virtuAds.showAd({
                                 </div>
                             )}
                         </div>
+
+                        {/* SDK Live Demo Section */}
+                        <div className="mt-24">
+                            <div className="text-center mb-12">
+                                <h2 className="text-3xl font-bold mb-4 flex items-center justify-center gap-3">
+                                    <Zap className="text-brand-green" />
+                                    SDK Live Demo
+                                </h2>
+                                <p className="text-brand-gray">Mira cómo se integra VirtuAds en tiempo real dentro de un entorno de juego.</p>
+                            </div>
+
+                            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                                <div className="space-y-6">
+                                    <div className="bg-brand-dark-secondary p-6 rounded-2xl border border-brand-green/20">
+                                        <h3 className="text-xl font-bold mb-4 text-white">Anuncio NFT Dinámico</h3>
+                                        <p className="text-brand-gray mb-4">
+                                            Nuestra tecnología inyecta texturas publicitarias directamente en el motor de renderizado del juego (Unity/Unreal/Web3 Engines).
+                                        </p>
+                                        <ul className="space-y-3 text-sm">
+                                            <li className="flex items-center gap-2 text-brand-green">
+                                                <Check size={16} /> Latencia Cero en Renderizado
+                                            </li>
+                                            <li className="flex items-center gap-2 text-brand-green">
+                                                <Check size={16} /> Seguimiento de Impresión On-Chain
+                                            </li>
+                                            <li className="flex items-center gap-2 text-brand-green">
+                                                <Check size={16} /> Recompensas P2E Automáticas
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="p-4 bg-brand-green/5 border border-brand-green/10 rounded-xl">
+                                        <p className="text-xs font-mono text-brand-green">
+                                    // Ad initialized at 0.04ms<br />
+                                    // Identity verified: XRPL_ADDR_...<br />
+                                    // Injecting AdID: VAD_9932
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Game Simulator */}
+                                <div className="relative aspect-video bg-black rounded-3xl border-8 border-brand-dark-secondary shadow-2xl overflow-hidden flex items-center justify-center">
+                                    {/* Inner Game Screen */}
+                                    <div className="absolute inset-0 bg-[#1a1a1a] flex flex-col items-center justify-center">
+                                        {/* Procedural Game Layout */}
+                                        <div className="w-full h-full p-4 flex flex-col">
+                                            <div className="flex justify-between items-center text-xs text-brand-gray mb-4">
+                                                <div className="flex gap-2">
+                                                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                                                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                                </div>
+                                                <span className="font-mono">FPS: 60 | PING: 12ms</span>
+                                            </div>
+
+                                            <div className="flex-grow flex items-center justify-center relative">
+                                                {/* The "Game" Character */}
+                                                <div className="relative">
+                                                    <img
+                                                        src="/assets/character-sprite.png"
+                                                        alt="Fortnite-style character"
+                                                        className="w-48 h-48 object-contain animate-bounce drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
+                                                    />
+                                                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-brand-gray text-[10px] uppercase font-bold bg-black/50 px-3 py-1 rounded-full border border-white/10">Player_01</div>
+                                                </div>
+
+                                                {/* The Ad Placement - Enhanced Version */}
+                                                <div className="absolute bottom-8 right-8 w-52 h-32 bg-gradient-to-br from-brand-green via-brand-green to-brand-blue rounded-xl p-[3px] shadow-[0_0_40px_rgba(0,255,157,0.6),0_0_80px_rgba(0,255,157,0.3)] animate-pulse">
+                                                    <div className="w-full h-full bg-gradient-to-br from-[#0a0f1a] to-[#0d1520] rounded-[10px] flex flex-col items-center justify-center overflow-hidden relative border-2 border-brand-green/30">
+                                                        {/* Background gradient overlay */}
+                                                        <div className="absolute inset-0 bg-gradient-to-tr from-brand-green/10 via-transparent to-brand-blue/10"></div>
+
+                                                        {/* Content */}
+                                                        <div className="relative z-10 flex flex-col items-center justify-center px-2">
+                                                            <div className="text-xs font-black text-brand-green mb-1 animate-pulse tracking-wider drop-shadow-[0_0_8px_rgba(0,255,157,0.8)]">VIRTUADS AI</div>
+                                                            <div className="text-[10px] text-white font-bold opacity-90 mb-2">Tu Anuncio Aquí</div>
+
+                                                            {/* Live indicator */}
+                                                            <div className="flex items-center gap-1 mb-2">
+                                                                <div className="w-1.5 h-1.5 bg-brand-green rounded-full animate-ping"></div>
+                                                                <div className="text-[7px] text-brand-green font-bold uppercase">TESTNET LIVE</div>
+                                                            </div>
+
+                                                            {/* Stats bar */}
+                                                            <div className="flex gap-2 text-[6px] text-brand-gray/70 font-mono">
+                                                                <span>FPS: 60</span>
+                                                                <span>•</span>
+                                                                <span>LAT: 0ms</span>
+                                                            </div>
+                                                        </div>
+
+                                                        {/* Corner accents */}
+                                                        <div className="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-brand-green/50 rounded-tl"></div>
+                                                        <div className="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-brand-green/50 rounded-br"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="mt-4 flex justify-center gap-4">
+                                                <div className="w-10 h-10 border border-white/20 rounded-full"></div>
+                                                <div className="w-10 h-10 border border-white/20 rounded-full"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Glass reflection */}
+                                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-white/5 to-transparent"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -167,3 +276,4 @@ await virtuAds.showAd({
 };
 
 export default DevelopersPage;
+

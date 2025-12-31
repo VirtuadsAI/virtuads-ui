@@ -1,8 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import bgHero from '../../assets/bg-hero.png';
 
-const Hero = () => {
+interface HeroProps {
+    onJoinClick: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
     const { t } = useTranslation();
 
     return (
@@ -26,13 +31,19 @@ const Hero = () => {
                         {t('hero.technologies')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="bg-brand-green text-brand-dark font-bold px-10 py-4 rounded-md text-xl transition-transform hover:scale-105 flex items-center justify-center gap-2">
+                        <button
+                            onClick={onJoinClick}
+                            className="bg-brand-green text-brand-dark font-bold px-10 py-4 rounded-md text-xl transition-transform hover:scale-105 flex items-center justify-center gap-2"
+                        >
                             {t('hero.ctaPrimary')}
                             <ChevronRight className="w-5 h-5" />
                         </button>
-                        <button className="border-2 border-brand-green text-brand-green font-bold px-10 py-4 rounded-md text-xl transition-all hover:bg-brand-green/10">
+                        <Link
+                            to="/whitepaper"
+                            className="border-2 border-brand-green text-brand-green font-bold px-10 py-4 rounded-md text-xl transition-all hover:bg-brand-green/10 text-center"
+                        >
                             {t('hero.ctaSecondary')}
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
