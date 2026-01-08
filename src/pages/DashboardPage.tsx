@@ -209,6 +209,14 @@ const DashboardPage: React.FC = () => {
                         </button>
                     </div>
                 </div>
+
+                {/* NFT Ads Monitoring Section */}
+                <div className="mt-12">
+                    <NFTAdGallery
+                        key={nftRefreshKey}
+                        onCreateClick={() => setIsNFTCreatorOpen(true)}
+                    />
+                </div>
             </div>
 
             {/* Campaign Wizard */}
@@ -224,6 +232,16 @@ const DashboardPage: React.FC = () => {
                 onSuccess={(txHash) => {
                     console.log('Payment successful:', txHash);
                     refreshBalance();
+                }}
+            />
+
+            {/* NFT Creator */}
+            <NFTAdCreator
+                isOpen={isNFTCreatorOpen}
+                onClose={() => setIsNFTCreatorOpen(false)}
+                onSuccess={(nftId) => {
+                    console.log('NFT Created:', nftId);
+                    setNftRefreshKey(prev => prev + 1);
                 }}
             />
         </div>
