@@ -19,6 +19,7 @@ import CampaignWizard from '../components/ui/CampaignWizard';
 import PaymentModal from '../components/ui/PaymentModal';
 import NFTAdCreator from '../components/nft/NFTAdCreator';
 import NFTAdGallery from '../components/nft/NFTAdGallery';
+import { analyticsService, CampaignStats } from '../services/analyticsService';
 
 const DashboardPage: React.FC = () => {
     const { t } = useTranslation();
@@ -28,6 +29,17 @@ const DashboardPage: React.FC = () => {
     const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
     const [isNFTCreatorOpen, setIsNFTCreatorOpen] = useState(false);
     const [nftRefreshKey, setNftRefreshKey] = useState(0);
+    const [onChainStats, setOnChainStats] = useState<CampaignStats>({
+        totalImpressions: 0,
+        onChainVerified: 0
+    });
+
+    // Fetch on-chain stats
+    useEffect(() => {
+        if (isConnected) {
+            analyticsService.getCampaignStats('GLOBAL').then(setOnChainStats);
+        }
+    }, [isConnected]);
 
     // Refresh balances when connected
     useEffect(() => {
@@ -38,8 +50,8 @@ const DashboardPage: React.FC = () => {
 
     const stats = [
         { label: 'Gasto Total', value: '1,240.50 XRP', change: '+12.5%', tendency: 'up', icon: Zap },
-        { label: 'Impresiones', value: '45.2K', change: '+8.2%', tendency: 'up', icon: BarChart3 },
-        { label: 'CTR Promedio', value: '3.14%', change: '-0.4%', tendency: 'down', icon: Target },
+        { label: 'Impresiones (Web3)', value: `${(onChainStats.totalImpressions / 1000).toFixed(1)}K`, change: '+8.2%', tendency: 'up', icon: BarChart3 },
+        { label: 'Verificado On-Chain', value: `${onChainStats.onChainVerified}`, change: '100% Audit.', tendency: 'up', icon: Target },
         { label: 'Conversiones', value: '842', change: '+24.1%', tendency: 'up', icon: ArrowUpRight },
     ];
 

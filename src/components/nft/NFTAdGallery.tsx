@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { useWallet } from '../../context/WalletContext';
 import { nftService, NFToken } from '../../services/nftService';
-import { ipfsService } from '../../services/ipfsService';
+import { analyticsService } from '../../services/analyticsService';
 
 // ============================================================================
 // Types
@@ -61,6 +61,14 @@ const NFTAdGallery: React.FC<NFTAdGalleryProps> = ({ onCreateClick }) => {
                 nftService.isVirtuAdsNFT(nft) || nft.metadata
             );
             setNfts(virtuAdsNFTs);
+
+            // Report impressions for tracking (Phase 4)
+            virtuAdsNFTs.forEach(nft => {
+                analyticsService.recordImpression({
+                    nftokenId: nft.NFTokenID,
+                    viewerAddress: address
+                });
+            });
         } catch (err) {
             console.error('[NFTGallery] Fetch error:', err);
             setError('Error al cargar NFTs');
@@ -69,7 +77,7 @@ const NFTAdGallery: React.FC<NFTAdGalleryProps> = ({ onCreateClick }) => {
         }
     };
 
-    const handleBurn = async (nftokenId: string) => {
+    const handleBurn = async () => {
         if (!confirm('¿Estás seguro de querer quemar este NFT? Esta acción es irreversible.')) {
             return;
         }
@@ -78,7 +86,7 @@ const NFTAdGallery: React.FC<NFTAdGalleryProps> = ({ onCreateClick }) => {
         alert('Función de quemar próximamente disponible');
     };
 
-    const handleSell = async (nftokenId: string) => {
+    const handleSell = async () => {
         // TODO: Open sell modal
         alert('Función de venta próximamente disponible');
     };
@@ -222,14 +230,14 @@ const NFTAdGallery: React.FC<NFTAdGalleryProps> = ({ onCreateClick }) => {
                             {/* Actions */}
                             <div className="flex gap-2">
                                 <button
-                                    onClick={() => handleSell(nft.NFTokenID)}
+                                    onClick={handleSell}
                                     className="flex-1 flex items-center justify-center gap-1 py-2 text-xs font-medium text-brand-green border border-brand-green/30 rounded hover:bg-brand-green/10 transition-colors"
                                 >
                                     <DollarSign className="w-3 h-3" />
                                     Vender
                                 </button>
                                 <button
-                                    onClick={() => handleBurn(nft.NFTokenID)}
+                                    onClick={handleBurn}
                                     className="p-2 text-red-400 border border-red-500/30 rounded hover:bg-red-500/10 transition-colors"
                                     title="Quemar NFT"
                                 >
