@@ -48,6 +48,22 @@ const TechStack = () => {
                     title={t('techStack.technologies.orchestration.title')}
                     description={t('techStack.technologies.orchestration.description')}
                 />
+                {/* Stablecoins */}
+                <TechCard
+                    icon={<span className="text-3xl font-bold text-brand-green">$</span>}
+                    title={t('techStack.technologies.usdt.title')}
+                    description={t('techStack.technologies.usdt.description')}
+                />
+                <TechCard
+                    icon={<span className="text-3xl font-bold text-brand-green">$</span>}
+                    title={t('techStack.technologies.usdc.title')}
+                    description={t('techStack.technologies.usdc.description')}
+                />
+                <TechCard
+                    icon={<span className="text-3xl font-bold text-brand-green">▲</span>}
+                    title={t('techStack.technologies.bat.title')}
+                    description={t('techStack.technologies.bat.description')}
+                />
             </div>
         </section>
     );

@@ -1,52 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useWallet } from '../../context/WalletContext';
-import { Wallet, ExternalLink } from 'lucide-react';
+import { Wallet, ExternalLink, X } from 'lucide-react';
+import WalletSelectionModal from './WalletSelectionModal';
 
 const WalletConnection: React.FC = () => {
-    const { address, isConnected, connect, disconnect, balance, error } = useWallet();
+    const { address, isConnected, connect, disconnect, balance, error, walletType } = useWallet();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleConnect = async (type: 'xrpl' | 'evm') => {
+        setIsModalOpen(false);
+        await connect(type);
+    };
 
     const formatAddress = (addr: string) => {
         return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
     };
 
+    const getExplorerUrl = (addr: string, type: 'xrpl' | 'evm' | null) => {
+        if (type === 'evm') return `https://etherscan.io/address/${addr}`; // Or appropriate testnet
+        return `https://testnet.xrpl.org/accounts/${addr}`;
+    };
+
     return (
         <div className="flex flex-col items-end">
+            <WalletSelectionModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                onSelect={handleConnect}
+            />
+
             {!isConnected ? (
                 <button
-                    onClick={connect}
+                    onClick={() => setIsModalOpen(true)}
                     className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-brand-green bg-brand-green/20 text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all text-sm font-medium"
                 >
                     <Wallet className="w-4 h-4" />
                     Connect Wallet
                 </button>
             ) : (
-                <div className="flex items-center gap-3">
-                    <div className="flex flex-col items-end text-xs">
-                        <span className="text-brand-green font-medium">{balance} XRP</span>
-                        <div className="flex items-center gap-1">
-                            <span className="text-brand-gray opacity-70">{formatAddress(address!)}</span>
-                            <a
-                                href={`https://testnet.xrpl.org/accounts/${address}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-brand-gray hover:text-brand-green transition-colors"
-                                title="Ver en Explorer"
-                            >
-                                <ExternalLink className="w-3 h-3" />
-                            </a>
-                        </div>
+                <div className="flex items-center gap-3 bg-brand-green/10 px-3 py-1.5 rounded-full border border-brand-green/20">
+                    <div className="flex items-center gap-2 text-xs">
+                        {/* Network Indicator */}
+                        <div className={`w-2 h-2 rounded-full ${walletType === 'evm' ? 'bg-orange-500' : 'bg-blue-500'}`}
+                            title={walletType === 'evm' ? 'EVM Network' : 'XRPL Network'}
+                        />
+
+                        {/* Balance */}
+                        <span className="text-brand-green font-bold">
+                            {balance} {walletType === 'evm' ? 'ETH' : 'XRP'}
+                        </span>
+
+                        <span className="text-brand-gray/50">|</span>
+
+                        {/* Address */}
+                        <a
+                            href={getExplorerUrl(address!, walletType)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-brand-gray hover:text-white transition-colors font-mono"
+                            title="View on Explorer"
+                        >
+                            {formatAddress(address!)}
+                        </a>
                     </div>
+
                     <button
                         onClick={disconnect}
-                        className="p-1.5 rounded-md border border-red-500/30 text-red-500 hover:bg-red-500/10 transition-all"
+                        className="text-red-400 hover:text-red-300 transition-colors p-0.5"
                         aria-label="Disconnect wallet"
+                        title="Disconnect"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+                        <X className="w-3 h-3" />
                     </button>
                 </div>
             )}
             {error && (
-                <span className="absolute top-full mt-1 text-[10px] text-red-500 bg-brand-dark px-1 rounded shadow-sm">
+                <span className="absolute top-full mt-1 text-[10px] text-red-500 bg-brand-dark px-1 rounded shadow-sm z-10 w-48 text-right">
                     {error}
                 </span>
             )}

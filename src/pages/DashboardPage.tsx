@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     LayoutDashboard,
     BarChart3,
@@ -8,17 +8,33 @@ import {
     ArrowDownRight,
     Plus,
     Calendar,
-    Filter
+    Filter,
+    Send,
+    Wallet,
+    Sparkles
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useWallet } from '../context/WalletContext';
 import CampaignWizard from '../components/ui/CampaignWizard';
+import PaymentModal from '../components/ui/PaymentModal';
+import NFTAdCreator from '../components/nft/NFTAdCreator';
+import NFTAdGallery from '../components/nft/NFTAdGallery';
 
 const DashboardPage: React.FC = () => {
     const { t } = useTranslation();
-    const { isConnected } = useWallet();
+    const { isConnected, balance, balances, refreshBalance, walletType } = useWallet();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+    const [isNFTCreatorOpen, setIsNFTCreatorOpen] = useState(false);
+    const [nftRefreshKey, setNftRefreshKey] = useState(0);
+
+    // Refresh balances when connected
+    useEffect(() => {
+        if (isConnected && walletType === 'xrpl') {
+            refreshBalance();
+        }
+    }, [isConnected, walletType, refreshBalance]);
 
     const stats = [
         { label: 'Gasto Total', value: '1,240.50 XRP', change: '+12.5%', tendency: 'up', icon: Zap },
@@ -56,12 +72,51 @@ const DashboardPage: React.FC = () => {
                     </div>
                 </div>
 
+                {/* Wallet Balance Card */}
+                {isConnected && walletType === 'xrpl' && (
+                    <div className="mb-8 p-6 bg-gradient-to-br from-brand-green/10 to-brand-green/5 border border-brand-green/20 rounded-2xl">
+                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 bg-brand-green/20 rounded-xl">
+                                    <Wallet className="w-6 h-6 text-brand-green" />
+                                </div>
+                                <div>
+                                    <p className="text-brand-gray text-sm mb-1">Balance de Wallet</p>
+                                    <div className="flex items-baseline gap-3">
+                                        <span className="text-3xl font-bold text-white">{balance || '0'}</span>
+                                        <span className="text-brand-green font-medium">XRP</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Token balances */}
+                            {balances.filter(b => b.currency !== 'XRP').length > 0 && (
+                                <div className="flex gap-4">
+                                    {balances.filter(b => b.currency !== 'XRP').map((b, i) => (
+                                        <div key={i} className="text-center px-4 py-2 bg-white/5 rounded-lg">
+                                            <p className="text-xs text-brand-gray mb-1">{b.currency}</p>
+                                            <p className="text-white font-bold">{parseFloat(b.value).toFixed(2)}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                            <button
+                                onClick={() => setIsPaymentModalOpen(true)}
+                                className="flex items-center gap-2 bg-brand-green text-brand-dark font-bold px-5 py-2.5 rounded-lg hover:scale-105 transition-transform"
+                            >
+                                <Send className="w-4 h-4" />
+                                Enviar Pago
+                            </button>
+                        </div>
+                    </div>
+                )}
+
                 {!isConnected && (
                     <div className="mb-8 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-xl flex items-center gap-3 text-yellow-500">
                         <Zap className="w-5 h-5" />
                         <p className="text-sm">Conecta tu wallet para ver datos reales de la red XRPL.</p>
                     </div>
                 )}
+
 
                 {/* Automation Badge */}
                 <div className="mb-8 p-4 bg-brand-green/5 border border-brand-green/20 rounded-xl flex items-center justify-between">
@@ -160,6 +215,16 @@ const DashboardPage: React.FC = () => {
             <CampaignWizard
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
+            />
+
+            {/* Payment Modal */}
+            <PaymentModal
+                isOpen={isPaymentModalOpen}
+                onClose={() => setIsPaymentModalOpen(false)}
+                onSuccess={(txHash) => {
+                    console.log('Payment successful:', txHash);
+                    refreshBalance();
+                }}
             />
         </div>
     );
