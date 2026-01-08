@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import DevelopersPage from './pages/DevelopersPage';
 import WhitepaperPage from './pages/WhitepaperPage';
 import DashboardPage from './pages/DashboardPage';
+import TermsPage from './pages/TermsPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/developers" element={<DevelopersPage />} />
                 <Route path="/whitepaper" element={<WhitepaperPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/terms" element={<TermsPage />} />
               </Routes>
             </main>
             <Footer />

@@ -725,5 +725,70 @@
             "securityNote": "Keep this key secret. It won't be shown again.",
             "generateNew": "Generate new key"
         }
+    },
+    "terms": {
+        "title": "Terms and Conditions",
+        "subtitle": "Legal information and usage regulations for the VirtuAdsAI platform",
+        "lastUpdated": "Last updated: November 2025",
+        "tabs": {
+            "general": "General Conditions",
+            "b2b": "Advertisers & Devs (B2B)",
+            "b2c": "Users (B2C)"
+        },
+        "general": {
+            "title": "General Terms of Use",
+            "sections": [
+                {
+                    "heading": "1. Introduction",
+                    "content": "Welcome to VirtuAdsAI. By accessing our platform, you accept these terms. VirtuAdsAI operates as a decentralized advertising network connecting advertisers, developers, and end-users using blockchain technology (XRPL) and Artificial Intelligence."
+                },
+                {
+                    "heading": "2. Definitions",
+                    "content": "'Platform' refers to the VirtuAdsAI interface, smart contracts, and API services. 'Users' includes advertisers, developers, and end consumers. 'Tokens' refers to accepted stablecoins or CBDCs."
+                },
+                {
+                    "heading": "3. Service Availability",
+                    "content": "Although we operate on decentralized networks, access to the web interface may be subject to maintenance. We do not guarantee 100% availability of the frontend interface."
+                },
+                {
+                    "heading": "4. Intellectual Property",
+                    "content": "Smart contract code is open-source under MIT license. The VirtuAdsAI brand and interface graphic elements are exclusive property."
+                }
+            ]
+        },
+        "b2b": {
+            "title": "Terms for Advertisers & Developers",
+            "sections": [
+                {
+                    "heading": "1. Payments & Settlement (XRPL)",
+                    "content": "Advertisers must fund campaigns using accepted tokens on the XRPL network. Payments are final and irreversible once confirmed on the ledger."
+                },
+                {
+                    "heading": "2. Ad Content",
+                    "content": "Illegal, misleading, or infringing content is prohibited. VirtuAdsAI uses AI Agents to audit content, but the advertiser retains final responsibility."
+                },
+                {
+                    "heading": "3. SDK Integration (Developers)",
+                    "content": "Developers integrating the SDK into their metaverses or P2E games must clearly inform users about anonymous metric collection. System abuse to inflate impressions will result in account bans."
+                }
+            ]
+        },
+        "b2c": {
+            "title": "Terms for End Users",
+            "sections": [
+                {
+                    "heading": "1. Privacy & Rewards",
+                    "content": "VirtuAdsAI prioritizes your privacy. If you opt-in for rewards (e.g., via Brave/BAT integration), you acknowledge that your ad interactions will be recorded on-chain in a pseudonymous manner."
+                },
+                {
+                    "heading": "2. Wallets & Custody",
+                    "content": "You are solely responsible for your private key custody. VirtuAdsAI has no access to your funds and cannot recover lost accounts."
+                },
+                {
+                    "heading": "3. Conduct",
+                    "content": "Any attempt to manipulate the rewards system via bots or automated scripts will result in permanent exclusion from the platform."
+                }
+            ]
+        }
     }
 }

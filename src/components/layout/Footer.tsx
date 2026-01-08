@@ -33,6 +33,7 @@ const Footer = () => {
                         <ul className="space-y-2 text-brand-gray text-sm">
                             <li><a href="#" className="hover:text-brand-green transition-colors">{t('footer.company.links.blog')}</a></li>
                             <li><Link to="/whitepaper" className="hover:text-brand-green transition-colors">{t('footer.company.links.whitepaper')}</Link></li>
+                            <li><Link to="/terms" className="hover:text-brand-green transition-colors">{t('terms.title')}</Link></li>
                             <li><a href="#" className="hover:text-brand-green transition-colors">{t('footer.company.links.careers')}</a></li>
                             <li><a href="#" className="hover:text-brand-green transition-colors">{t('footer.company.links.contact')}</a></li>
                         </ul>
@@ -55,8 +56,13 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="border-t border-brand-green/10 pt-8 text-center text-brand-gray text-sm">
+                <div className="border-t border-brand-green/10 pt-8 text-center text-brand-gray text-sm flex flex-col md:flex-row justify-between items-center">
                     <p>{t('footer.copyright')}</p>
+                    <div className="mt-4 md:mt-0 space-x-6">
+                        <Link to="/terms" className="hover:text-brand-green transition-colors">
+                            {t('terms.title')}
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>

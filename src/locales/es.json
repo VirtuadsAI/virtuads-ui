@@ -725,5 +725,70 @@
             "securityNote": "Mantén esta clave secreta. No se mostrará de nuevo.",
             "generateNew": "Generar nueva clave"
         }
+    },
+    "terms": {
+        "title": "Términos y Condiciones",
+        "subtitle": "Información legal y regulaciones de uso de la plataforma VirtuAdsAI",
+        "lastUpdated": "Última actualización: Noviembre 2025",
+        "tabs": {
+            "general": "Condiciones Generales",
+            "b2b": "Anunciantes y Devs (B2B)",
+            "b2c": "Usuarios (B2C)"
+        },
+        "general": {
+            "title": "Condiciones Generales de Uso",
+            "sections": [
+                {
+                    "heading": "1. Introducción",
+                    "content": "Bienvenido a VirtuAdsAI. Al acceder a nuestra plataforma, aceptas estos términos. VirtuAdsAI opera como una red descentralizada de publicidad que conecta anunciantes, desarrolladores y usuarios finales utilizando tecnología blockchain (XRPL) e Inteligencia Artificial."
+                },
+                {
+                    "heading": "2. Definiciones",
+                    "content": "'Plataforma' se refiere a la interfaz, contratos inteligentes y servicios API de VirtuAdsAI. 'Usuarios' incluye anunciantes, desarrolladores y consumidores finales. 'Tokens' refiere a las stablecoins o CBDCs aceptadas."
+                },
+                {
+                    "heading": "3. Disponibilidad del Servicio",
+                    "content": "Aunque operamos sobre redes descentralizadas, el acceso a la interfaz web puede estar sujeto a mantenimiento. No garantizamos 100% de disponibilidad de la interfaz frontend."
+                },
+                {
+                    "heading": "4. Propiedad Intelectual",
+                    "content": "El código de los smart contracts es open-source bajo licencia MIT. La marca VirtuAdsAI y los elementos gráficos de la interfaz son propiedad exclusiva."
+                }
+            ]
+        },
+        "b2b": {
+            "title": "Términos para Anunciantes y Desarrolladores",
+            "sections": [
+                {
+                    "heading": "1. Pagos y Liquidación (XRPL)",
+                    "content": "Los anunciantes deben fondear sus campañas utilizando tokens aceptados en la red XRPL. Los pagos son finales e irreversibles una vez confirmados en el ledger."
+                },
+                {
+                    "heading": "2. Contenido de los Anuncios",
+                    "content": "Está prohibido el contenido ilegal, engañoso, o que viole derechos de terceros. VirtuAdsAI utiliza Agentes IA para auditar el contenido, pero el anunciante es el responsable final."
+                },
+                {
+                    "heading": "3. Integración del SDK (Developers)",
+                    "content": "Los desarrolladores que integren el SDK en sus metaversos o juegos P2E deben informar claramente a sus usuarios sobre la recolección de métricas anónimas. El abuso del sistema para inflar impresiones resultará en el bloqueo de la cuenta."
+                }
+            ]
+        },
+        "b2c": {
+            "title": "Términos para Usuarios Finales",
+            "sections": [
+                {
+                    "heading": "1. Privacidad y Recompensas",
+                    "content": "VirtuAdsAI prioriza tu privacidad. Si optas por recibir recompensas (ej. vía Brave/BAT integration), reconoces que tus interacciones con anuncios serán registradas on-chain de forma pseudónima."
+                },
+                {
+                    "heading": "2. Wallets y Custodia",
+                    "content": "Eres el único responsable de la custodia de tus claves privadas. VirtuAdsAI no tiene acceso a tus fondos ni puede recuperar cuentas perdidas."
+                },
+                {
+                    "heading": "3. Conducta",
+                    "content": "Cualquier intento de manipular el sistema de recompensas mediante bots o scripts automatizados resultará en la exclusión permanente de la plataforma."
+                }
+            ]
+        }
     }
 }
