@@ -96,6 +96,18 @@
             "orchestration": {
                 "title": "Capa de Orquestación (n8n)",
                 "description": "Automatización autónoma que coordina eventos entre SDK, agentes IA y el Ledger de XRPL."
+            },
+            "usdt": {
+                "title": "Tether (USDT)",
+                "description": "Stablecoin líder por capitalización. Liquidez profunda para anunciantes globales."
+            },
+            "usdc": {
+                "title": "USD Coin (USDC)",
+                "description": "Stablecoin regulada y transparente. Ideal para clientes corporativos y compliance."
+            },
+            "bat": {
+                "title": "Basic Attention Token",
+                "description": "Token de utilidad para la economía de la atención. Integración nativa con Brave."
             }
         }
     },
@@ -418,7 +430,8 @@
                 "blog": "Blog",
                 "whitepaper": "Whitepaper",
                 "careers": "Carreras",
-                "contact": "Contacto"
+                "contact": "Contacto",
+                "privacy": "Política de Privacidad"
             }
         },
         "follow": "Síguenos",
@@ -785,10 +798,37 @@
                     "content": "Eres el único responsable de la custodia de tus claves privadas. VirtuAdsAI no tiene acceso a tus fondos ni puede recuperar cuentas perdidas."
                 },
                 {
-                    "heading": "3. Conducta",
-                    "content": "Cualquier intento de manipular el sistema de recompensas mediante bots o scripts automatizados resultará en la exclusión permanente de la plataforma."
+                    "title": "3. Conducta",
+                    "content": "Los usuarios se comprometen a interactuar legítimamente con los anuncios. El uso de bots o scripts para automatizar interacciones resultará en la pérdida de todas las recompensas acumuladas."
                 }
             ]
         }
+    },
+    "privacy": {
+        "title": "Política de Privacidad",
+        "subtitle": "Cómo protegemos y gestionamos tus datos",
+        "lastUpdated": "Última actualización: Enero 2026",
+        "sections": [
+            {
+                "heading": "1. Recolección de Datos",
+                "content": "Solo recolectamos los datos estrictamente necesarios para el funcionamiento de la plataforma. Esto incluye la dirección pública de tu billetera (wallet) cuando te conectas. No almacenamos nombres, direcciones físicas ni correos electrónicos a menos que los proporciones voluntariamente para el registro de desarrolladores."
+            },
+            {
+                "heading": "2. Uso de la Información",
+                "content": "Utilizamos tu dirección pública para gestionar el acceso a nuestros servicios, procesar transacciones en la blockchain y, si corresponde, distribuir recompensas. Los datos de navegación agregados pueden ser utilizados para mejorar nuestros algoritmos de IA, siempre de forma anónima."
+            },
+            {
+                "heading": "3. Cookies y Rastreo",
+                "content": "Utilizamos cookies esenciales para mantener tu sesión segura. No utilizamos cookies de terceros para rastreo invasivo. Nuestra integración con Brave respeta las preferencias de privacidad configuradas en tu navegador."
+            },
+            {
+                "heading": "4. Derechos del Usuario",
+                "content": "Tienes derecho a desconectar tu billetera en cualquier momento. Dado que las transacciones en la blockchain son públicas e inmutables, no podemos borrar el historial de transacciones, pero sí eliminaremos cualquier dato off-chain asociado a tu perfil si así lo solicitas."
+            },
+            {
+                "heading": "5. Seguridad",
+                "content": "Implementamos medidas de seguridad de vanguardia, incluyendo encriptación y firewalls, para proteger los datos de nuestra plataforma. Sin embargo, recuerda que eres el único responsable de la seguridad de tus claves privadas."
+            }
+        ]
     }
 }

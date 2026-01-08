@@ -9,6 +9,8 @@ import WhitepaperPage from './pages/WhitepaperPage';
 import DashboardPage from './pages/DashboardPage';
 import TermsPage from './pages/TermsPage';
 
+import PrivacyPolicy from './pages/PrivacyPolicy';
+
 function App() {
   return (
     <HelmetProvider>
@@ -23,6 +25,7 @@ function App() {
                 <Route path="/whitepaper" element={<WhitepaperPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/terms" element={<TermsPage />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
               </Routes>
             </main>
             <Footer />

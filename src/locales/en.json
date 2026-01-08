@@ -96,6 +96,18 @@
             "orchestration": {
                 "title": "Orchestration Layer (n8n)",
                 "description": "Autonomous automation coordinating events between SDK, AI agents, and the XRPL Ledger."
+            },
+            "usdt": {
+                "title": "Tether (USDT)",
+                "description": "Leading stablecoin by market cap. Deep liquidity for global advertisers."
+            },
+            "usdc": {
+                "title": "USD Coin (USDC)",
+                "description": "Regulated and transparent stablecoin. Ideal for corporate clients and compliance."
+            },
+            "bat": {
+                "title": "Basic Attention Token",
+                "description": "Utility token for the attention economy. Native integration with Brave."
             }
         }
     },
@@ -418,7 +430,8 @@
                 "blog": "Blog",
                 "whitepaper": "Whitepaper",
                 "careers": "Careers",
-                "contact": "Contact"
+                "contact": "Contact",
+                "privacy": "Privacy Policy"
             }
         },
         "follow": "Follow Us",
@@ -785,10 +798,37 @@
                     "content": "You are solely responsible for your private key custody. VirtuAdsAI has no access to your funds and cannot recover lost accounts."
                 },
                 {
-                    "heading": "3. Conduct",
-                    "content": "Any attempt to manipulate the rewards system via bots or automated scripts will result in permanent exclusion from the platform."
+                    "title": "3. Conduct",
+                    "content": "Users agree to interact legitimately with ads. Using bots or scripts to automate interactions will result in the forfeiture of all accrued rewards."
                 }
             ]
         }
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "subtitle": "How we protect and manage your data",
+        "lastUpdated": "Last updated: January 2026",
+        "sections": [
+            {
+                "heading": "1. Data Collection",
+                "content": "We only collect data strictly necessary for the platform's operation. This includes your public wallet address when you connect. We do not store names, physical addresses, or emails unless voluntarily provided for developer registration."
+            },
+            {
+                "heading": "2. Information Usage",
+                "content": "We use your public address to manage access to our services, process blockchain transactions, and, if applicable, distribute rewards. Aggregated browsing data may be used to improve our AI algorithms, always anonymously."
+            },
+            {
+                "heading": "3. Cookies and Tracking",
+                "content": "We use essential cookies to keep your session secure. We do not use third-party cookies for invasive tracking. Our Brave integration respects the privacy preferences set in your browser."
+            },
+            {
+                "heading": "4. User Rights",
+                "content": "You have the right to disconnect your wallet at any time. Since blockchain transactions are public and immutable, we cannot erase transaction history, but we will delete any off-chain data associated with your profile upon request."
+            },
+            {
+                "heading": "5. Security",
+                "content": "We implement state-of-the-art security measures, including encryption and firewalls, to protect our platform data. However, remember that you are solely responsible for the security of your private keys."
+            }
+        ]
     }
 }
