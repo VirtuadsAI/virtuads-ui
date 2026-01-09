@@ -10,6 +10,7 @@ import Pilots from '../components/sections/Pilots';
 import CompetitiveAdvantage from '../components/sections/CompetitiveAdvantage';
 import Roadmap from '../components/sections/Roadmap';
 import AiPreviewSection from '../components/sections/AiPreviewSection';
+import DeFiIslandShowcase from '../components/sections/DeFiIslandShowcase';
 import WaitlistModal from '../components/ui/WaitlistModal';
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
@@ -40,6 +41,7 @@ const HomePage = () => {
                 <Pilots />
                 <CompetitiveAdvantage />
                 <AiPreviewSection />
+                <DeFiIslandShowcase />
                 <Roadmap />
             </div>
 

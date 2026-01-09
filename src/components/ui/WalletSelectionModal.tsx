@@ -6,7 +6,7 @@ import { Wallet, Info, X, CheckSquare, Square } from 'lucide-react';
 interface WalletSelectionModalProps {
     isOpen: boolean;
     onClose: () => void;
-    onSelect: (type: 'xrpl' | 'evm') => void;
+    onSelect: (type: 'xrpl' | 'evm' | 'solana') => void;
 }
 
 const WalletSelectionModal: React.FC<WalletSelectionModalProps> = ({ isOpen, onClose, onSelect }) => {
@@ -67,6 +67,29 @@ const WalletSelectionModal: React.FC<WalletSelectionModalProps> = ({ isOpen, onC
                         <Wallet className="w-5 h-5 text-gray-400 group-hover:text-brand-green" />
                     </button>
 
+                    {/* Solana Option */}
+                    <button
+                        onClick={() => onSelect('solana')}
+                        disabled={!isAgreed}
+                        className="w-full flex items-center justify-between p-4 rounded-lg border border-purple-500/30 bg-purple-500/10 hover:bg-purple-500/20 hover:border-purple-500 transition-all group disabled:cursor-not-allowed"
+                    >
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 group-hover:scale-110 transition-transform">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.5 12.5L21.5 8.5L17.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path d="M6.5 19.5L2.5 15.5L6.5 11.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path d="M2.5 15.5H15.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path d="M21.5 8.5H8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </div>
+                            <div className="text-left">
+                                <h3 className="text-white font-bold">Solana Network</h3>
+                                <p className="text-xs text-purple-400/90 font-medium">Phantom Wallet</p>
+                            </div>
+                        </div>
+                        <Wallet className="w-5 h-5 text-gray-400 group-hover:text-purple-500" />
+                    </button>
+
                     {/* EVM Option */}
                     <button
                         onClick={() => onSelect('evm')}
@@ -81,7 +104,7 @@ const WalletSelectionModal: React.FC<WalletSelectionModalProps> = ({ isOpen, onC
                             </div>
                             <div className="text-left">
                                 <h3 className="text-white font-bold">EVM Network</h3>
-                                <p className="text-xs text-orange-400/90 font-medium">MetaMask / Web3</p>
+                                <p className="text-xs text-orange-400/90 font-medium">MetaMask / Trust Wallet</p>
                             </div>
                         </div>
                         <Wallet className="w-5 h-5 text-gray-400 group-hover:text-orange-500" />

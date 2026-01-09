@@ -16,7 +16,7 @@
         "badge": "Primera plataforma Web3 de publicidad descentralizada",
         "title": "Publicidad Web3 con IA y Blockchain",
         "subtitle": "Automatiza campañas digitales en web, metaversos y videojuegos P2E",
-        "technologies": "XRPL (Ripple) • Chainlink • Agentes IA • Brave/BAT • CBDCs",
+        "technologies": "Solana (P2E Rail) • XRPL (CBDC Rail) • Chainlink • Agentes IA • Brave",
         "ctaPrimary": "ÚNETE A LA REVOLUCIÓN",
         "ctaSecondary": "VER WHITEPAPER"
     },
@@ -40,8 +40,8 @@
         "solutionDescription": "VirtuAdsAI es la primera capa publicitaria auditable, interoperable y regulatoria-compliant en Web3.",
         "features": {
             "transparency": "Transparencia total con conversiones verificables on-chain",
-            "payments": "Pagos programables en stablecoins y CBDCs vía XRPL",
-            "interoperability": "Interoperabilidad multi-cadena vía Chainlink CCIP",
+            "payments": "Pagos programables en Solana y XRPL (CBDCs)",
+            "interoperability": "Estructura de doble rail: Solana para juegos y XRPL para finanzas",
             "privacy": "Privacidad avanzada con zk-proofs y Brave Ads",
             "fairSharing": "Reparto justo entre usuarios, gobiernos, devs y plataforma"
         },
@@ -69,9 +69,13 @@
         "title": "ARQUITECTURA TECNOLÓGICA",
         "subtitle": "Stack de tecnologías de vanguardia para publicidad descentralizada, transparente y eficiente",
         "technologies": {
+            "solana": {
+                "title": "Solana (Performance Rail)",
+                "description": "Rail principal de alto rendimiento para videojuegos P2E y NFT Ads. Capacidad de miles de TPS para una experiencia de usuario sin latencia."
+            },
             "xrpl": {
-                "title": "XRPL (Ripple)",
-                "description": "Rail principal de pagos programables. Liquidación en segundos con stablecoins (USDC, USDT) y CBDCs (RLUSD, Bre·B)."
+                "title": "XRPL (Settlement Rail)",
+                "description": "Rail estratégico para pagos institucionales y CBDCs (RLUSD, Bre·B). Liquidación segura y regulatoria-compliant."
             },
             "chainlink": {
                 "title": "Chainlink/CCIP",
@@ -95,7 +99,7 @@
             },
             "orchestration": {
                 "title": "Capa de Orquestación (n8n)",
-                "description": "Automatización autónoma que coordina eventos entre SDK, agentes IA y el Ledger de XRPL."
+                "description": "Automatización autónoma que coordina eventos entre SDK, agentes IA y los Ledgers de Solana y XRPL."
             },
             "usdt": {
                 "title": "Tether (USDT)",
@@ -268,8 +272,12 @@
             "title": "Tokenómica",
             "items": {
                 "mainRail": {
-                    "title": "Rail Principal",
-                    "description": "XRPL para pagos instantáneos"
+                    "title": "Rail principal (Games)",
+                    "description": "Solana para escalabilidad masiva"
+                },
+                "settlementRail": {
+                    "title": "Rail de Liquidación",
+                    "description": "XRPL para CBDCs y pagos institucionales"
                 },
                 "cbdcs": {
                     "title": "CBDCs Soportados",
@@ -371,6 +379,7 @@
                 "year": "2026",
                 "items": [
                     "Lanzamiento oficial de la plataforma",
+                    "Solana mainnet para P2E y NFT Ads",
                     "XRPL mainnet con CBDCs (Bre·B, RLUSD)",
                     "Primera integración con metaversos (Decentraland, Spatial)",
                     "Dashboard de campañas v2.0",
@@ -381,8 +390,8 @@
                 "title": "Fase 2: Expansión",
                 "year": "2027",
                 "items": [
-                    "Integración con 5+ videojuegos P2E",
-                    "NFT Ads avanzados (composables, dinámicos)",
+                    "Integración con 10+ videojuegos P2E (Solana/B3)",
+                    "NFT Ads avanzados y dinámicos en Solana",
                     "Chainlink CCIP en 5 cadenas",
                     "Agentes IA creativos autónomos",
                     "50+ clientes activos globalmente"
@@ -455,9 +464,9 @@
         },
         "section1": {
             "title": "Resumen Ejecutivo",
-            "p1": "VirtuAdsAI representa un cambio de paradigma en la publicidad digital, introduciendo la primera plataforma publicitaria verdaderamente descentralizada, transparente y equitativa construida sobre tecnologías Web3. Al aprovechar XRPL (Ripple), Chainlink CCIP, agentes de IA y soluciones que priorizan la privacidad como Brave/BAT, estamos creando un ecosistema donde anunciantes, editores, usuarios e incluso gobiernos se benefician equitativamente del valor publicitario.",
-            "p2": "El mercado global de publicidad digital está valorado en más de $600 mil millones anuales, pero sigue dominado por entidades centralizadas que controlan datos, métricas y distribución de ingresos. VirtuAdsAI tiene como objetivo capturar al menos el 5% de este mercado ofreciendo conversiones verificables on-chain, pagos programables en stablecoins y CBDCs, y un modelo de ingresos justo multi-stakeholder.",
-            "p3": "Nuestra plataforma habilita formatos publicitarios revolucionarios incluyendo NFT Ads en metaversos, integraciones de juegos P2E y campañas impulsadas por CBDCs, posicionando a VirtuAdsAI en la intersección de Web3, IA y cumplimiento regulatorio."
+            "p1": "VirtuAdsAI representa un cambio de paradigma en la publicidad digital, introduciendo una arquitectura de doble rail construida sobre Solana y XRPL. Al aprovechar la velocidad masiva de Solana para juegos P2E y la robustez de XRPL para CBDCs, estamos creando un ecosistema donde la atención del usuario se monetiza con eficiencia institucional.",
+            "p2": "El mercado global de publicidad digital está valorado en más de $600 mil millones anuales. VirtuAdsAI tiene como objetivo capturar el 5% de este mercado combinando la escalabilidad de Solana para micro-pagos publicitarios y la infraestructura de XRPL para la liquidación de monedas digitales de bancos centrales (CBDCs).",
+            "p3": "Nuestra plataforma habilita NFT Ads dinámicos en Solana y campañas impulsadas por CBDCs en XRPL, posicionando a VirtuAdsAI como el puente definitivo entre el gaming masivo y el cumplimiento regulatorio financiero."
         },
         "section2": {
             "title": "Planteamiento del Problema",
@@ -479,19 +488,23 @@
             "title": "Descripción de la Solución",
             "p1": "VirtuAdsAI es la primera capa publicitaria auditable, interoperable y regulatoria-compliant en Web3. Nuestra plataforma aborda los problemas fundamentales de la publicidad tradicional a través de la tecnología blockchain, inteligencia artificial y gobernanza descentralizada.",
             "features": {
-                "transparency": "Transparencia completa con conversiones verificables on-chain y registros de auditoría inmutables",
-                "payments": "Pagos programables en stablecoins (USDC, USDT, PYUSD) y CBDCs (Bre·B, RLUSD) vía XRPL para liquidación instantánea",
-                "interoperability": "Compatibilidad multi-cadena a través de Chainlink CCIP, habilitando campañas en múltiples ecosistemas blockchain",
-                "privacy": "Protección avanzada de privacidad con pruebas de conocimiento cero e integración con navegadores que priorizan la privacidad como Brave",
-                "fairSharing": "Distribución justa de ingresos entre usuarios (25%), desarrolladores (22%), plataforma (30%), DAO (10%), partners (8%) y gobiernos (5%)"
+                "transparency": "Transparencia completa con conversiones verificables on-chain en Solana y XRPL",
+                "payments": "Pagos programables: Solana para recompensas in-game y XRPL para CBDCs",
+                "interoperability": "Arquitectura híbrida que conecta juegos P2E con el sistema financiero global",
+                "privacy": "Protección avanzada de privacidad con pruebas de conocimiento cero integradas",
+                "fairSharing": "Distribución justa de ingresos auditada mediante smart contracts"
             }
         },
         "section4": {
             "title": "Arquitectura Tecnológica",
             "intro": "VirtuAdsAI integra múltiples tecnologías de vanguardia de blockchain e IA para ofrecer una experiencia publicitaria superior:",
+            "solana": {
+                "title": "Solana",
+                "description": "Rail principal de alto rendimiento para la ejecución de NFT Ads y micro-transacciones publicitarias en tiempo real. Su capacidad de hasta 65,000 TPS asegura que las interacciones en juegos P2E no tengan latencia."
+            },
             "xrpl": {
-                "title": "XRPL (Ripple)",
-                "description": "Rail principal de pagos para transacciones programables. La liquidación ocurre en segundos con tarifas mínimas, soportando stablecoins y CBDCs. El DEX integrado de XRPL habilita conversión de moneda instantánea y liquidez."
+                "title": "XRPL (CBDCs)",
+                "description": "Capa de liquidación institucional para stablecoins reguladas y CBDCs. XRPL proporciona la infraestructura necesaria para que marcas y gobiernos operen con total cumplimiento regulatorio."
             },
             "chainlink": {
                 "title": "Chainlink/CCIP",
@@ -554,8 +567,9 @@
                 "title": "Fase 1: Lanzamiento",
                 "year": "2026",
                 "items": [
-                    "Lanzamiento oficial de la plataforma con integración completa de XRPL mainnet",
-                    "Soporte para CBDCs (Bre·B de Colombia, RLUSD de Ripple)",
+                    "Official platform launch with Solana mainnet integration",
+                    "Solana-powered P2E and NFT Ads infrastructure",
+                    "XRPL mainnet with CBDCs (Bre·B, RLUSD)",
                     "Primeras integraciones con metaversos (Decentraland, Spatial)",
                     "Dashboard de campañas v2.0 con analítica avanzada",
                     "Onboarding de los primeros 10 clientes B2B enterprise"
@@ -565,8 +579,8 @@
                 "title": "Fase 2: Expansión",
                 "year": "2027",
                 "items": [
-                    "Integración con 5+ videojuegos P2E principales",
-                    "NFT Ads avanzados (componibles, dinámicos, programables)",
+                    "Integration with 10+ major P2E video games (Solana)",
+                    "Advanced NFT Ads (composable, dynamic, programmable on Solana)",
                     "Despliegue de Chainlink CCIP en 5 redes blockchain",
                     "Agentes IA creativos autónomos para generación de anuncios",
                     "Expansión global a 50+ clientes enterprise activos"

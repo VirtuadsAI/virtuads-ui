@@ -7,7 +7,6 @@ import {
     ArrowUpRight,
     ArrowDownRight,
     Plus,
-    Calendar,
     Filter,
     Send,
     Wallet,
@@ -19,11 +18,12 @@ import CampaignWizard from '../components/ui/CampaignWizard';
 import PaymentModal from '../components/ui/PaymentModal';
 import NFTAdCreator from '../components/nft/NFTAdCreator';
 import NFTAdGallery from '../components/nft/NFTAdGallery';
+import MetaverseStatus from '../components/ui/MetaverseStatus';
 import { analyticsService, CampaignStats } from '../services/analyticsService';
 
 const DashboardPage: React.FC = () => {
     const { t } = useTranslation();
-    const { isConnected, balance, balances, refreshBalance, walletType } = useWallet();
+    const { isConnected, balance, balances, refreshBalance, walletType, address } = useWallet();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
@@ -52,7 +52,7 @@ const DashboardPage: React.FC = () => {
         { label: 'Gasto Total', value: '1,240.50 XRP', change: '+12.5%', tendency: 'up', icon: Zap },
         { label: 'Impresiones (Web3)', value: `${(onChainStats.totalImpressions / 1000).toFixed(1)}K`, change: '+8.2%', tendency: 'up', icon: BarChart3 },
         { label: 'Verificado On-Chain', value: `${onChainStats.onChainVerified}`, change: '100% Audit.', tendency: 'up', icon: Target },
-        { label: 'Conversiones', value: '842', change: '+24.1%', tendency: 'up', icon: ArrowUpRight },
+        { label: 'Ingresos Metaverso', value: '458.20 XRP', change: '+18.4%', tendency: 'up', icon: Sparkles },
     ];
 
     return (
@@ -70,10 +70,6 @@ const DashboardPage: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex gap-3">
-                        <button className="flex items-center gap-2 bg-white/5 border border-white/10 text-white px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">
-                            <Calendar className="w-4 h-4" />
-                            Últimos 30 días
-                        </button>
                         <button
                             onClick={() => setIsModalOpen(true)}
                             className="flex items-center gap-2 bg-brand-green text-brand-dark font-bold px-4 py-2 rounded-lg hover:scale-105 transition-transform"
@@ -83,83 +79,94 @@ const DashboardPage: React.FC = () => {
                         </button>
                     </div>
                 </div>
-
-                {/* Wallet Balance Card */}
-                {isConnected && walletType === 'xrpl' && (
-                    <div className="mb-8 p-6 bg-gradient-to-br from-brand-green/10 to-brand-green/5 border border-brand-green/20 rounded-2xl">
-                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                            <div className="flex items-center gap-4">
-                                <div className="p-3 bg-brand-green/20 rounded-xl">
-                                    <Wallet className="w-6 h-6 text-brand-green" />
-                                </div>
-                                <div>
-                                    <p className="text-brand-gray text-sm mb-1">Balance de Wallet</p>
-                                    <div className="flex items-baseline gap-3">
-                                        <span className="text-3xl font-bold text-white">{balance || '0'}</span>
-                                        <span className="text-brand-green font-medium">XRP</span>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Token balances */}
-                            {balances.filter(b => b.currency !== 'XRP').length > 0 && (
-                                <div className="flex gap-4">
-                                    {balances.filter(b => b.currency !== 'XRP').map((b, i) => (
-                                        <div key={i} className="text-center px-4 py-2 bg-white/5 rounded-lg">
-                                            <p className="text-xs text-brand-gray mb-1">{b.currency}</p>
-                                            <p className="text-white font-bold">{parseFloat(b.value).toFixed(2)}</p>
+                {/* Upper Section: Stats + Metaverse Profile */}
+                <div className="grid lg:grid-cols-3 gap-8 mb-8">
+                    <div className="lg:col-span-2">
+                        {/* Wallet Balance Card */}
+                        {isConnected && walletType === 'xrpl' && (
+                            <div className="mb-8 p-6 bg-gradient-to-br from-brand-green/10 to-brand-green/5 border border-brand-green/20 rounded-2xl">
+                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                                    <div className="flex items-center gap-4">
+                                        <div className="p-3 bg-brand-green/20 rounded-xl">
+                                            <Wallet className="w-6 h-6 text-brand-green" />
                                         </div>
-                                    ))}
+                                        <div>
+                                            <p className="text-brand-gray text-sm mb-1">Balance de Wallet</p>
+                                            <div className="flex items-baseline gap-3">
+                                                <span className="text-3xl font-bold text-white">{balance || '0'}</span>
+                                                <span className="text-brand-green font-medium">XRP</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Token balances */}
+                                    {balances.filter(b => b.currency !== 'XRP').length > 0 && (
+                                        <div className="flex gap-4">
+                                            {balances.filter(b => b.currency !== 'XRP').map((b, i) => (
+                                                <div key={i} className="text-center px-4 py-2 bg-white/5 rounded-lg">
+                                                    <p className="text-xs text-brand-gray mb-1">{b.currency}</p>
+                                                    <p className="text-white font-bold">{parseFloat(b.value).toFixed(2)}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                    <button
+                                        onClick={() => setIsPaymentModalOpen(true)}
+                                        className="flex items-center gap-2 bg-brand-green text-brand-dark font-bold px-5 py-2.5 rounded-lg hover:scale-105 transition-transform"
+                                    >
+                                        <Send className="w-4 h-4" />
+                                        Enviar Pago
+                                    </button>
                                 </div>
-                            )}
-                            <button
-                                onClick={() => setIsPaymentModalOpen(true)}
-                                className="flex items-center gap-2 bg-brand-green text-brand-dark font-bold px-5 py-2.5 rounded-lg hover:scale-105 transition-transform"
-                            >
-                                <Send className="w-4 h-4" />
-                                Enviar Pago
-                            </button>
-                        </div>
-                    </div>
-                )}
-
-                {!isConnected && (
-                    <div className="mb-8 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-xl flex items-center gap-3 text-yellow-500">
-                        <Zap className="w-5 h-5" />
-                        <p className="text-sm">Conecta tu wallet para ver datos reales de la red XRPL.</p>
-                    </div>
-                )}
-
-
-                {/* Automation Badge */}
-                <div className="mb-8 p-4 bg-brand-green/5 border border-brand-green/20 rounded-xl flex items-center justify-between">
-                    <div className="flex items-center gap-3 text-brand-green">
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-brand-green rounded-full animate-ping opacity-25"></div>
-                            <Zap className="relative w-5 h-5" />
-                        </div>
-                        <p className="text-sm font-medium">Automatización n8n activa: Agentes de IA monitoreando el inventario P2E.</p>
-                    </div>
-                    <span className="text-[10px] text-brand-gray border border-white/10 px-2 py-1 rounded bg-white/5 uppercase font-bold">Local Node: 5678</span>
-                </div>
-
-                {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                    {stats.map((stat, idx) => (
-                        <div key={idx} className="bg-brand-dark-secondary border border-brand-green/10 rounded-2xl p-6 hover:border-brand-green/30 transition-colors group">
-                            <div className="flex justify-between items-start mb-4">
-                                <div className="p-3 bg-brand-green/10 rounded-xl text-brand-green group-hover:scale-110 transition-transform">
-                                    <stat.icon className="w-6 h-6" />
-                                </div>
-                                <span className={`flex items-center text-xs font-bold px-2 py-1 rounded-full ${stat.tendency === 'up' ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'
-                                    }`}>
-                                    {stat.tendency === 'up' ? <ArrowUpRight className="w-3 h-3 mr-1" /> : <ArrowDownRight className="w-3 h-3 mr-1" />}
-                                    {stat.change}
-                                </span>
                             </div>
-                            <h3 className="text-brand-gray text-sm mb-1">{stat.label}</h3>
-                            <p className="text-2xl font-bold text-white tracking-tight">{stat.value}</p>
+                        )}
+
+                        {!isConnected && (
+                            <div className="mb-8 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-xl flex items-center gap-3 text-yellow-500">
+                                <Zap className="w-5 h-5" />
+                                <p className="text-sm">Conecta tu wallet para ver datos reales de la red XRPL.</p>
+                            </div>
+                        )}
+
+                        {/* Stats Grid inside Main Area */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {stats.map((stat, idx) => (
+                                <div key={idx} className="bg-brand-dark-secondary border border-brand-green/10 rounded-2xl p-6 hover:border-brand-green/30 transition-colors group">
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div className="p-3 bg-brand-green/10 rounded-xl text-brand-green group-hover:scale-110 transition-transform">
+                                            <stat.icon className="w-6 h-6" />
+                                        </div>
+                                        <span className={`flex items-center text-xs font-bold px-2 py-1 rounded-full ${stat.tendency === 'up' ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'
+                                            }`}>
+                                            {stat.tendency === 'up' ? <ArrowUpRight className="w-3 h-3 mr-1" /> : <ArrowDownRight className="w-3 h-3 mr-1" />}
+                                            {stat.change}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-brand-gray text-sm mb-1">{stat.label}</h3>
+                                    <p className="text-2xl font-bold text-white tracking-tight">{stat.value}</p>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Metaverse Sidebar Status */}
+                    <div className="space-y-6">
+                        <MetaverseStatus address={address} />
+
+                        {/* Metaverse Live Stats Widget */}
+                        <div className="p-6 bg-gradient-to-br from-brand-blue/10 to-transparent border border-brand-blue/20 rounded-2xl">
+                            <h4 className="text-sm font-bold text-brand-blue mb-4 uppercase tracking-wider">Live Metaverse Metrics</h4>
+                            <div className="space-y-4">
+                                <div className="flex justify-between items-center text-sm">
+                                    <span className="text-brand-gray">Active DCL Users:</span>
+                                    <span className="text-white font-mono">1,248</span>
+                                </div>
+                                <div className="flex justify-between items-center text-sm">
+                                    <span className="text-brand-gray">Ad Unit Coverage:</span>
+                                    <span className="text-brand-green font-bold">94%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Main Content Grid */}

@@ -18,6 +18,7 @@ const Header = () => {
         { href: '/#casos-uso', label: t('header.nav.useCases'), isAnchor: true },
         { to: '/whitepaper', label: t('header.nav.whitepaper') },
         { to: '/developers', label: t('header.nav.developers') },
+        { to: '/p2e-demo', label: 'P2E DEMO', isSpecial: true },
         { to: '/dashboard', label: 'DASHBOARD', isSpecial: true },
     ];
 

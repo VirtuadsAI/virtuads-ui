@@ -16,7 +16,7 @@
         "badge": "First Web3 decentralized advertising platform",
         "title": "Web3 Advertising with AI and Blockchain",
         "subtitle": "Automate digital campaigns on web, metaverses and P2E video games",
-        "technologies": "XRPL (Ripple) • Chainlink • AI Agents • Brave/BAT • CBDCs",
+        "technologies": "Solana (P2E Rail) • XRPL (CBDC Rail) • Chainlink • AI Agents • Brave",
         "ctaPrimary": "JOIN THE REVOLUTION",
         "ctaSecondary": "VIEW WHITEPAPER"
     },
@@ -40,8 +40,8 @@
         "solutionDescription": "VirtuAdsAI is the first auditable, interoperable and regulatory-compliant advertising layer in Web3.",
         "features": {
             "transparency": "Total transparency with on-chain verifiable conversions",
-            "payments": "Programmable payments in stablecoins and CBDCs via XRPL",
-            "interoperability": "Multi-chain interoperability via Chainlink CCIP",
+            "payments": "Programmable payments on Solana and XRPL (CBDCs)",
+            "interoperability": "Dual-rail architecture: Solana for gaming and XRPL for finance",
             "privacy": "Advanced privacy with zk-proofs and Brave Ads",
             "fairSharing": "Fair distribution among users, governments, devs and platform"
         },
@@ -69,9 +69,13 @@
         "title": "TECHNOLOGY ARCHITECTURE",
         "subtitle": "Cutting-edge technology stack for decentralized, transparent and efficient advertising",
         "technologies": {
+            "solana": {
+                "title": "Solana (Performance Rail)",
+                "description": "Primary high-performance rail for P2E video games and NFT Ads. Thousands of TPS capacity for a zero-latency user experience."
+            },
             "xrpl": {
-                "title": "XRPL (Ripple)",
-                "description": "Main programmable payments rail. Settlement in seconds with stablecoins (USDC, USDT) and CBDCs (RLUSD, Bre·B)."
+                "title": "XRPL (Settlement Rail)",
+                "description": "Strategic rail for institutional payments and CBDCs (RLUSD, Bre·B). Secure and regulatory-compliant settlement."
             },
             "chainlink": {
                 "title": "Chainlink/CCIP",
@@ -95,7 +99,7 @@
             },
             "orchestration": {
                 "title": "Orchestration Layer (n8n)",
-                "description": "Autonomous automation coordinating events between SDK, AI agents, and the XRPL Ledger."
+                "description": "Autonomous automation coordinating events between SDK, AI agents, and Solana/XRPL Ledgers."
             },
             "usdt": {
                 "title": "Tether (USDT)",
@@ -268,8 +272,12 @@
             "title": "Tokenomics",
             "items": {
                 "mainRail": {
-                    "title": "Main Rail",
-                    "description": "XRPL for instant payments"
+                    "title": "Main Rail (Games)",
+                    "description": "Solana for massive scalability"
+                },
+                "settlementRail": {
+                    "title": "Settlement Rail",
+                    "description": "XRPL for CBDCs and institutional payments"
                 },
                 "cbdcs": {
                     "title": "Supported CBDCs",
@@ -371,6 +379,7 @@
                 "year": "2026",
                 "items": [
                     "Official platform launch",
+                    "Solana mainnet for P2E and NFT Ads",
                     "XRPL mainnet with CBDCs (Bre·B, RLUSD)",
                     "First metaverse integration (Decentraland, Spatial)",
                     "Campaign dashboard v2.0",
@@ -381,8 +390,8 @@
                 "title": "Phase 2: Expansion",
                 "year": "2027",
                 "items": [
-                    "Integration with 5+ P2E video games",
-                    "Advanced NFT Ads (composable, dynamic)",
+                    "Integration with 10+ P2E video games (Solana)",
+                    "Advanced NFT Ads (composable, dynamic) on Solana",
                     "Chainlink CCIP on 5 chains",
                     "Autonomous creative AI agents",
                     "50+ active clients globally"
@@ -455,9 +464,9 @@
         },
         "section1": {
             "title": "Executive Summary",
-            "p1": "VirtuAdsAI represents a paradigm shift in digital advertising, introducing the first truly decentralized, transparent, and equitable advertising platform built on Web3 technologies. By leveraging XRPL (Ripple), Chainlink CCIP, AI agents, and privacy-first solutions like Brave/BAT, we're creating an ecosystem where advertisers, publishers, users, and even governments benefit fairly from advertising value.",
-            "p2": "The global digital advertising market is valued at over $600 billion annually, yet it remains dominated by centralized entities that control data, metrics, and revenue distribution. VirtuAdsAI aims to capture at least 5% of this market by offering on-chain verifiable conversions, programmable payments in stablecoins and CBDCs, and a fair multi-stakeholder revenue model.",
-            "p3": "Our platform enables revolutionary advertising formats including NFT Ads in metaverses, P2E game integrations, and CBDC-powered campaigns, positioning VirtuAdsAI at the intersection of Web3, AI, and regulatory compliance."
+            "p1": "VirtuAdsAI represents a paradigm shift in digital advertising, introducing a dual-rail architecture built on Solana and XRPL. By leveraging Solana's massive speed for P2E gaming and XRPL's robustness for CBDCs, we are creating an ecosystem where user attention is monetized with institutional efficiency.",
+            "p2": "The global digital advertising market is valued at over $600 billion annually. VirtuAdsAI aims to capture 5% of this market by combining Solana's scalability for advertising micro-payments and XRPL's infrastructure for central bank digital currency (CBDC) settlement.",
+            "p3": "Our platform enables dynamic NFT Ads on Solana and CBDC-powered campaigns on XRPL, positioning VirtuAdsAI as the definitive bridge between massive gaming and financial regulatory compliance."
         },
         "section2": {
             "title": "Problem Statement",
@@ -479,19 +488,23 @@
             "title": "Solution Overview",
             "p1": "VirtuAdsAI is the first auditable, interoperable, and regulatory-compliant advertising layer in Web3. Our platform addresses the fundamental problems of traditional advertising through blockchain technology, artificial intelligence, and decentralized governance.",
             "features": {
-                "transparency": "Complete transparency with on-chain verifiable conversions and immutable audit trails",
-                "payments": "Programmable payments in stablecoins (USDC, USDT, PYUSD) and CBDCs (Bre·B, RLUSD) via XRPL for instant settlement",
-                "interoperability": "Multi-chain compatibility through Chainlink CCIP, enabling campaigns across multiple blockchain ecosystems",
-                "privacy": "Advanced privacy protection with zero-knowledge proofs and integration with privacy-first browsers like Brave",
-                "fairSharing": "Fair revenue distribution among users (25%), developers (22%), platform (30%), DAO (10%), partners (8%), and governments (5%)"
+                "transparency": "Complete transparency with on-chain verifiable conversions on Solana and XRPL",
+                "payments": "Programmable payments: Solana for in-game rewards and XRPL for CBDCs",
+                "interoperability": "Hybrid architecture connecting P2E games with the global financial system",
+                "privacy": "Advanced privacy protection with integrated zero-knowledge proofs",
+                "fairSharing": "Fair revenue distribution audited via smart contracts"
             }
         },
         "section4": {
             "title": "Technology Architecture",
             "intro": "VirtuAdsAI integrates multiple cutting-edge blockchain and AI technologies to deliver a superior advertising experience:",
+            "solana": {
+                "title": "Solana",
+                "description": "Primary high-performance rail for real-time NFT Ads and advertising micro-transactions. Its capacity of up to 65,000 TPS ensures that P2E game interactions have no latency."
+            },
             "xrpl": {
-                "title": "XRPL (Ripple)",
-                "description": "Main payment rail for programmable transactions. Settlement occurs in seconds with minimal fees, supporting stablecoins and CBDCs. XRPL's built-in DEX enables instant currency conversion and liquidity."
+                "title": "XRPL (CBDCs)",
+                "description": "Institutional settlement layer for regulated stablecoins and CBDCs. XRPL provides the necessary infrastructure for brands and governments to operate with full regulatory compliance."
             },
             "chainlink": {
                 "title": "Chainlink/CCIP",
@@ -554,8 +567,9 @@
                 "title": "Phase 1: Launch",
                 "year": "2026",
                 "items": [
-                    "Official platform launch with full XRPL mainnet integration",
-                    "Support for CBDCs (Bre·B from Colombia, RLUSD from Ripple)",
+                    "Official platform launch with Solana mainnet integration",
+                    "Solana-powered P2E and NFT Ads infrastructure",
+                    "XRPL mainnet with CBDCs (Bre·B, RLUSD)",
                     "First metaverse integrations (Decentraland, Spatial)",
                     "Campaign dashboard v2.0 with advanced analytics",
                     "Onboarding of first 10 B2B enterprise clients"
@@ -565,8 +579,8 @@
                 "title": "Phase 2: Expansion",
                 "year": "2027",
                 "items": [
-                    "Integration with 5+ major P2E video games",
-                    "Advanced NFT Ads (composable, dynamic, programmable)",
+                    "Integration with 10+ major P2E video games (Solana)",
+                    "Advanced NFT Ads (composable, dynamic, programmable on Solana)",
                     "Chainlink CCIP deployment across 5 blockchain networks",
                     "Autonomous creative AI agents for ad generation",
                     "Global expansion to 50+ active enterprise clients"

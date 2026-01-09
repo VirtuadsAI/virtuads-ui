@@ -268,6 +268,48 @@ await virtuAds.showAd({
                                 </div>
                             </div>
                         </div>
+
+                        {/* DeFi Island Technical Integration */}
+                        <div className="mt-32 p-12 bg-white/5 border border-white/10 rounded-[40px]">
+                            <div className="flex flex-col md:flex-row gap-12 items-center">
+                                <div className="md:w-1/2 space-y-6">
+                                    <h3 className="text-3xl font-bold text-white leading-tight">
+                                        Patrón de Integración: <br />
+                                        <span className="text-brand-green">DeFi Island + nice-xrpl</span>
+                                    </h3>
+                                    <p className="text-brand-gray">
+                                        Para proyectos basados en <span className="text-white">nice-xrpl</span> (como <a href="https://learn.xrpl.org/defi-island/" target="_blank" rel="noopener noreferrer" className="text-brand-green hover:underline">DeFi Island</a>), nuestro SDK proporciona hooks reactivos que sincronizan el estado del juego con la disponibilidad de anuncios globales.
+                                    </p>
+                                    <div className="flex items-center gap-4 p-4 bg-brand-green/10 border border-brand-green/20 rounded-2xl">
+                                        <div className="w-12 h-12 rounded-xl bg-brand-green flex items-center justify-center text-brand-dark">
+                                            <Zap className="w-6 h-6" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm font-bold text-white">Prueba Social Técnica</p>
+                                            <p className="text-xs text-brand-gray">Más de 50 dApps de XRPL usan este patrón de integración.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="md:w-1/2 bg-black/60 rounded-3xl p-6 border border-white/10 font-mono text-sm overflow-hidden">
+                                    <div className="flex gap-2 mb-4">
+                                        <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
+                                        <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                                        <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
+                                    </div>
+                                    <div className="text-brand-green opacity-80 mb-2">// Hook de integración DeFi Island</div>
+                                    <div className="text-white">
+                                        <span className="text-blue-400">const</span> {'{ ads, sync }'} = <span className="text-yellow-400">useVirtuAds</span>({'{\n'}
+                                        {'  zoneId: '} <span className="text-brand-green">'DEFI_ISLE_3D'</span>{',\n'}
+                                        {'  refreshRate: '} <span className="text-orange-400">10000</span>{'\n'}
+                                        {'})'}
+                                    </div>
+                                    <div className="mt-4 text-brand-gray">
+                                        {'// Inyectar en el motor Three.js\n'}
+                                        {'<Billboard texture={ads.currentTexture} />'}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

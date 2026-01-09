@@ -17,6 +17,21 @@ let impressionBuffer: any[] = [];
 const BATCH_SIZE = 50;
 
 /**
+ * Route: XRPL Operator Status
+ */
+app.get('/api/xrpl/status', async (req, res) => {
+    try {
+        const info = await xrplOperator.getStatus();
+        res.json({
+            status: 'success',
+            ...info
+        });
+    } catch (e) {
+        res.status(500).json({ status: 'error', message: 'Failed to fetch XRPL status' });
+    }
+});
+
+/**
  * Route: Batch Impression Reporting
  * Receives impressions from the frontend
  */

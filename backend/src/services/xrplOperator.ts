@@ -21,6 +21,16 @@ class XRPLOperator {
         }
     }
 
+    async getStatus() {
+        await this.connect();
+        return {
+            address: this.operatorWallet?.address || 'rSimulatedAddress...',
+            connected: this.client.isConnected(),
+            network: 'XRPL Testnet',
+            environment: this.operatorWallet ? 'Production' : 'Simulation'
+        };
+    }
+
     /**
      * Registra un batch de impresiones en la XRPL usando Memos
      */

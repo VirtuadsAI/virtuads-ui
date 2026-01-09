@@ -7,7 +7,7 @@ const WalletConnection: React.FC = () => {
     const { address, isConnected, connect, disconnect, balance, error, walletType } = useWallet();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleConnect = async (type: 'xrpl' | 'evm') => {
+    const handleConnect = async (type: 'xrpl' | 'evm' | 'solana') => {
         setIsModalOpen(false);
         await connect(type);
     };
@@ -16,8 +16,9 @@ const WalletConnection: React.FC = () => {
         return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
     };
 
-    const getExplorerUrl = (addr: string, type: 'xrpl' | 'evm' | null) => {
-        if (type === 'evm') return `https://etherscan.io/address/${addr}`; // Or appropriate testnet
+    const getExplorerUrl = (addr: string, type: 'xrpl' | 'evm' | 'solana' | null) => {
+        if (type === 'evm') return `https://etherscan.io/address/${addr}`;
+        if (type === 'solana') return `https://solscan.io/account/${addr}`;
         return `https://testnet.xrpl.org/accounts/${addr}`;
     };
 
@@ -41,13 +42,13 @@ const WalletConnection: React.FC = () => {
                 <div className="flex items-center gap-3 bg-brand-green/10 px-3 py-1.5 rounded-full border border-brand-green/20">
                     <div className="flex items-center gap-2 text-xs">
                         {/* Network Indicator */}
-                        <div className={`w-2 h-2 rounded-full ${walletType === 'evm' ? 'bg-orange-500' : 'bg-blue-500'}`}
-                            title={walletType === 'evm' ? 'EVM Network' : 'XRPL Network'}
+                        <div className={`w-2 h-2 rounded-full ${walletType === 'evm' ? 'bg-orange-500' : walletType === 'solana' ? 'bg-purple-500' : 'bg-blue-500'}`}
+                            title={walletType === 'evm' ? 'EVM Network' : walletType === 'solana' ? 'Solana Network' : 'XRPL Network'}
                         />
 
                         {/* Balance */}
                         <span className="text-brand-green font-bold">
-                            {balance} {walletType === 'evm' ? 'ETH' : 'XRP'}
+                            {balance} {walletType === 'evm' ? 'ETH' : walletType === 'solana' ? 'SOL' : 'XRP'}
                         </span>
 
                         <span className="text-brand-gray/50">|</span>

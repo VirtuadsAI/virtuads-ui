@@ -6,7 +6,8 @@
 export interface CampaignData {
     name: string;
     budget: string;
-    objective: 'traffic' | 'conversions' | 'awareness';
+    objective: 'traffic' | 'conversions' | 'awareness' | 'engagement';
+    metadata?: Record<string, any>;
 }
 
 export interface N8nResponse {
@@ -56,7 +57,7 @@ class N8nService {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    campaign: campaignData,
+                    ...campaignData,
                     timestamp: new Date().toISOString(),
                     source: 'virtuads-dashboard',
                 }),
