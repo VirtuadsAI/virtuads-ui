@@ -6,7 +6,6 @@ export default class MainScene extends Phaser.Scene {
     private player!: Phaser.Physics.Arcade.Sprite;
     private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
     private coins!: Phaser.Physics.Arcade.Group;
-    private adBillboard!: Phaser.GameObjects.Rectangle;
     private adText!: Phaser.GameObjects.Text;
     private score: number = 0;
     private scoreText!: Phaser.GameObjects.Text;
@@ -34,7 +33,7 @@ export default class MainScene extends Phaser.Scene {
         });
 
         // Ad Billboard Section
-        this.adBillboard = this.add.rectangle(400, 100, 600, 120, 0x001100, 0.8)
+        this.add.rectangle(400, 100, 600, 120, 0x001100, 0.8)
             .setStrokeStyle(2, 0x00ff88);
 
         this.adText = this.add.text(400, 100, 'Loading VirtuAds Campaign...', {
@@ -57,9 +56,11 @@ export default class MainScene extends Phaser.Scene {
             setXY: { x: 100, y: 300, stepX: 120 }
         });
 
-        this.coins.children.iterate((child: any) => {
-            child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
-            child.setCollideWorldBounds(true);
+        this.coins.children.iterate((child: Phaser.GameObjects.GameObject) => {
+            const arcadeChild = child as Phaser.Physics.Arcade.Sprite;
+            arcadeChild.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+            arcadeChild.setCollideWorldBounds(true);
+            return null;
         });
 
         // Physics
@@ -100,7 +101,8 @@ export default class MainScene extends Phaser.Scene {
             const response = await n8nService.submitCampaign({
                 name: "In-Game Ad Request",
                 budget: "0",
-                objective: "awareness"
+                objective: 'engagement',
+                description: 'P2E Runner Engagement Ad'
             });
 
             if (response.success && response.data) {
@@ -113,19 +115,20 @@ export default class MainScene extends Phaser.Scene {
                     campaignId: response.data.campaignId
                 });
             }
-        } catch (error) {
+        } catch {
             this.adText.setText("[AD] Connecting to VirtuAds Network...");
         }
     }
 
-    private collectCoin(player: any, coin: any) {
-        coin.disableBody(true, true);
+    private collectCoin(_player: Phaser.Types.Physics.Arcade.GameObjectWithBody | Phaser.Tilemaps.Tile, coin: Phaser.Types.Physics.Arcade.GameObjectWithBody | Phaser.Tilemaps.Tile) {
+        const arcadeCoin = coin as Phaser.Physics.Arcade.Sprite;
+        arcadeCoin.disableBody(true, true);
         this.score += 0.5;
         this.scoreText.setText(`XRP Rewards: ${this.score}`);
 
         // Re-spawn coin
         setTimeout(() => {
-            coin.enableBody(true, Phaser.Math.Between(50, 750), Phaser.Math.Between(150, 550), true, true);
+            arcadeCoin.enableBody(true, Phaser.Math.Between(50, 750), Phaser.Math.Between(150, 550), true, true);
         }, 2000);
     }
 }

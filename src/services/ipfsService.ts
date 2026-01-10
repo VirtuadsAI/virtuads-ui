@@ -161,7 +161,7 @@ class IPFSService {
     /**
      * Fetch content from IPFS by CID
      */
-    async fetchFromIPFS<T = any>(cid: string): Promise<T | null> {
+    async fetchFromIPFS<T = unknown>(cid: string): Promise<T | null> {
         // Try each gateway until one works
         for (const gateway of IPFS_GATEWAYS) {
             try {
@@ -178,8 +178,8 @@ class IPFSService {
 
                     return await response.text() as T;
                 }
-            } catch (e) {
-                console.warn(`[IPFS] Gateway ${gateway} failed:`, e);
+            } catch {
+                console.warn(`[IPFS] Gateway ${gateway} failed`);
                 continue;
             }
         }

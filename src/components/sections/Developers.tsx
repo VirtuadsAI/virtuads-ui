@@ -23,7 +23,7 @@ const Developers = () => {
                             {t('developers.benefits.revenue.description')}
                         </p>
                         <ul className="text-sm text-brand-gray space-y-2">
-                            {(t('developers.benefits.revenue.features', { returnObjects: true }) as any[]).map((feature: string, index: number) => (
+                            {(t('developers.benefits.revenue.features', { returnObjects: true }) as string[]).map((feature: string, index: number) => (
                                 <li key={index} className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-brand-green"></div>{feature}
                                 </li>
@@ -40,7 +40,7 @@ const Developers = () => {
                             {t('developers.benefits.integration.description')}
                         </p>
                         <ul className="text-sm text-brand-gray space-y-2">
-                            {(t('developers.benefits.integration.features', { returnObjects: true }) as any[]).map((feature: string, index: number) => (
+                            {(t('developers.benefits.integration.features', { returnObjects: true }) as string[]).map((feature: string, index: number) => (
                                 <li key={index} className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-brand-green"></div>{feature}
                                 </li>
@@ -57,7 +57,7 @@ const Developers = () => {
                             {t('developers.benefits.control.description')}
                         </p>
                         <ul className="text-sm text-brand-gray space-y-2">
-                            {(t('developers.benefits.control.features', { returnObjects: true }) as any[]).map((feature: string, index: number) => (
+                            {(t('developers.benefits.control.features', { returnObjects: true }) as string[]).map((feature: string, index: number) => (
                                 <li key={index} className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-brand-green"></div>{feature}
                                 </li>
@@ -69,7 +69,7 @@ const Developers = () => {
                 <div className="bg-brand-dark/30 rounded-2xl p-8 border border-brand-green/10 max-w-4xl mx-auto">
                     <h3 className="text-2xl font-bold mb-8 text-center">{t('developers.integrationProcess.title')}</h3>
                     <div className="grid md:grid-cols-5 gap-4 text-center">
-                        {(t('developers.integrationProcess.steps', { returnObjects: true }) as any[]).map((step: string, index: number) => (
+                        {(t('developers.integrationProcess.steps', { returnObjects: true }) as string[]).map((step: string, index: number) => (
                             <div key={index} className="relative">
                                 <div className="w-10 h-10 rounded-full bg-brand-green text-brand-dark font-bold flex items-center justify-center mx-auto mb-3 z-10 relative">{index + 1}</div>
                                 <p className="text-sm font-medium">{step}</p>

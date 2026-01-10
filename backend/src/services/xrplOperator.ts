@@ -34,7 +34,7 @@ class XRPLOperator {
     /**
      * Registra un batch de impresiones en la XRPL usando Memos
      */
-    async recordImpressionsOnChain(impressions: any[]): Promise<{ success: boolean, txHash?: string, error?: string }> {
+    async recordImpressionsOnChain(impressions: unknown[]): Promise<{ success: boolean, txHash?: string, error?: string }> {
         try {
             await this.connect();
 
@@ -80,13 +80,14 @@ class XRPLOperator {
                 txHash: result.result.hash
             };
 
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error('[XRPL Operator] Error recording impressions:', error);
-            return { success: false, error: error.message };
+            const message = error instanceof Error ? error.message : 'Unknown error';
+            return { success: false, error: message };
         }
     }
 
-    private createManifest(impressions: any[]): string {
+    private createManifest(impressions: unknown[]): string {
         const hash = crypto.createHash('sha256');
         hash.update(JSON.stringify(impressions));
         return hash.digest('hex');

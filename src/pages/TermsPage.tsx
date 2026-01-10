@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FileText, Building2, Users, Shield } from 'lucide-react';
+import { FileText, Building2, Users, Shield, LucideIcon } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 type TabType = 'general' | 'b2b' | 'b2c';
@@ -9,7 +9,7 @@ const TermsPage = () => {
     const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState<TabType>('general');
 
-    const tabs: { id: TabType; label: string; icon: any }[] = [
+    const tabs: { id: TabType; label: string; icon: LucideIcon; }[] = [
         { id: 'general', label: t('terms.tabs.general'), icon: FileText },
         { id: 'b2b', label: t('terms.tabs.b2b'), icon: Building2 },
         { id: 'b2c', label: t('terms.tabs.b2c'), icon: Users },

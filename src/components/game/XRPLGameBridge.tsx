@@ -1,14 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Zap, Activity, Trophy, Coins, Radio, Monitor, CheckCircle2 } from 'lucide-react';
+import { Activity, Coins, Radio, Monitor, CheckCircle2 } from 'lucide-react';
 import { n8nService } from '../../services/n8nService';
 import { analyticsService } from '../../services/analyticsService';
 
+interface XrplEvent {
+    id: string;
+    game: string;
+    type: string;
+    player: string;
+    timestamp: string;
+    rewarded: boolean;
+}
+
+interface XrplStatus {
+    address: string;
+    connected: boolean;
+    network: string;
+    environment: string;
+}
+
 const XRPLGameBridge: React.FC = () => {
-    const [events, setEvents] = useState<any[]>([]);
+    const [events, setEvents] = useState<XrplEvent[]>([]);
     const [isMonitoring, setIsMonitoring] = useState(false);
     const [lastReward, setLastReward] = useState<string | null>(null);
     const [adContent, setAdContent] = useState<string>("Esperando campaña...");
-    const [xrplStatus, setXrplStatus] = useState<any>(null);
+    const [xrplStatus, setXrplStatus] = useState<XrplStatus | null>(null);
 
     // Fetch XRPL Backend Status
     useEffect(() => {
@@ -50,12 +66,13 @@ const XRPLGameBridge: React.FC = () => {
         return () => clearInterval(interval);
     }, [isMonitoring]);
 
-    const handleAchievement = async (event: any) => {
+    const handleAchievement = async (event: XrplEvent) => {
         // Call n8n to fetch a targeted P2E ad for this achievement
         const response = await n8nService.submitCampaign({
             name: `P2E_Reward_${event.game}`,
             budget: "100",
-            objective: "conversions"
+            objective: "conversions",
+            description: `Achievement in ${event.game}`
         });
 
         if (response.success && response.data?.aiRecommendations) {
@@ -64,7 +81,9 @@ const XRPLGameBridge: React.FC = () => {
 
             // PHASE 4: Record Impression in the bridge
             analyticsService.recordImpression({
-                nftokenId: `BRIDGE_${event.game.toUpperCase()}`,
+                nftId: `BRIDGE_${event.game.toUpperCase()}`,
+                adCreativeId: `P2E_${event.game.toUpperCase()}_REWARD`,
+                placement: 'xrpl_game_bridge',
                 campaignId: response.data.campaignId
             });
         }
@@ -151,7 +170,7 @@ const XRPLGameBridge: React.FC = () => {
                                     </div>
                                 </div>
                                 {/* Mesh background */}
-                                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#00d1ff 0.5px, transparent 0.5px)', backgroundSize: '10px 10px' }}></div>
+                                <div className="absolute inset-0 opacity-10 pointer-events-none mesh-grid-blue"></div>
                             </div>
                         </div>
 
@@ -173,8 +192,12 @@ const XRPLGameBridge: React.FC = () => {
                                     <span className="text-white font-mono">{lastReward || 'Pending Event...'}</span>
                                 </div>
                                 <div className="pt-2">
-                                    <div className="w-full bg-white/5 h-2 rounded-full overflow-hidden">
-                                        <div className="bg-yellow-500 h-full w-2/3 shadow-[0_0_10px_rgba(234,179,8,0.5)]"></div>
+                                    <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                                        <div className="bg-brand-green h-full w-[85%]"></div>
+                                    </div>
+                                    <div className="flex justify-between mt-2">
+                                        <span className="text-[10px] text-brand-gray uppercase">Batch Health</span>
+                                        <span className="text-[10px] text-brand-green font-bold">85% Stable</span>
                                     </div>
                                 </div>
                             </div>

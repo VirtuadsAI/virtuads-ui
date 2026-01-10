@@ -4,7 +4,7 @@
  */
 
 import * as xrpl from 'xrpl';
-import { ipfsService, NFTMetadata, IPFSUploadResult } from './ipfsService';
+import { ipfsService, NFTMetadata } from './ipfsService';
 
 // ============================================================================
 // Types & Interfaces
@@ -20,6 +20,24 @@ export interface NFToken {
     // Decoded metadata
     metadata?: NFTMetadata;
     httpImageUrl?: string;
+}
+
+interface XRPLMetaNode {
+    CreatedNode?: {
+        LedgerEntryType: string;
+        NewFields?: {
+            NFTokens?: Array<{ NFToken: { NFTokenID: string } }>;
+        };
+    };
+    ModifiedNode?: {
+        LedgerEntryType: string;
+        FinalFields?: {
+            NFTokens?: Array<{ NFToken: { NFTokenID: string } }>;
+        };
+        PreviousFields?: {
+            NFTokens?: Array<{ NFToken: { NFTokenID: string } }>;
+        };
+    };
 }
 
 export interface NFTMintParams {
@@ -187,13 +205,14 @@ class NFTService {
     /**
      * Get NFToken ID from a mint transaction result
      */
-    extractNFTokenId(txResult: any): string | null {
+    extractNFTokenId(txResult: unknown): string | null {
         try {
             // Look for the NFTokenID in affected nodes
-            const meta = txResult.meta || txResult.result?.meta;
+            const resultObj = txResult as { meta?: { AffectedNodes?: unknown[] }; result?: { meta?: { AffectedNodes?: unknown[] } } };
+            const meta = resultObj.meta || resultObj.result?.meta;
             if (!meta || typeof meta === 'string') return null;
 
-            for (const node of meta.AffectedNodes || []) {
+            for (const node of (meta.AffectedNodes || []) as XRPLMetaNode[]) {
                 const created = node.CreatedNode;
                 if (created?.LedgerEntryType === 'NFTokenPage') {
                     const tokens = created.NewFields?.NFTokens;
@@ -208,7 +227,7 @@ class NFTService {
                     const prevTokens = modified.PreviousFields?.NFTokens || [];
 
                     // Find the new token
-                    const prevIds = new Set(prevTokens.map((t: any) => t.NFToken?.NFTokenID));
+                    const prevIds = new Set(prevTokens.map(t => t.NFToken?.NFTokenID));
                     for (const token of finalTokens) {
                         if (!prevIds.has(token.NFToken?.NFTokenID)) {
                             return token.NFToken?.NFTokenID;
@@ -218,8 +237,8 @@ class NFTService {
             }
 
             return null;
-        } catch (e) {
-            console.error('[NFT] Extract token ID error:', e);
+        } catch {
+            console.error('[NFT] Extract token ID error');
             return null;
         }
     }
@@ -334,8 +353,8 @@ class NFTService {
                 return await ipfsService.fetchFromIPFS<NFTMetadata>(cid);
             }
             return null;
-        } catch (e) {
-            console.warn('[NFT] Fetch metadata failed:', e);
+        } catch {
+            console.warn('[NFT] Fetch metadata failed');
             return null;
         }
     }
@@ -343,7 +362,7 @@ class NFTService {
     /**
      * Get sell offers for an NFT
      */
-    async getNFTSellOffers(nftokenId: string): Promise<any[]> {
+    async getNFTSellOffers(nftokenId: string): Promise<unknown[]> {
         const client = await this.connect();
 
         try {
@@ -352,7 +371,7 @@ class NFTService {
                 nft_id: nftokenId
             });
             return response.result.offers || [];
-        } catch (e) {
+        } catch {
             return [];
         }
     }

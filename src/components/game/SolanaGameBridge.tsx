@@ -1,17 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Activity, Monitor, CheckCircle2, Globe, ArrowUpRight } from 'lucide-react';
+import { Activity, Coins, Radio, Monitor, CheckCircle2, Rocket } from 'lucide-react';
 import { n8nService } from '../../services/n8nService';
 import { analyticsService } from '../../services/analyticsService';
+import { starAtlasService, StarAtlasShip } from '../../services/starAtlasService';
 
 const SAGE_PROGRAM_ID = "SAGE2HAwep459SNq61LHvjxPk4pLPEJLoMETef7f7EE";
 const SOLANA_RPC = "https://api.mainnet-beta.solana.com";
 
+interface SolanaEventMetadata {
+    signature: string;
+    timestamp: string;
+    block: number;
+}
+
+interface SolanaEvent {
+    id: string;
+    type: string;
+    message: string;
+    metadata: SolanaEventMetadata;
+}
+
+interface SolanaStatus {
+    connected: boolean;
+    tps: number;
+}
+
 const SolanaGameBridge: React.FC = () => {
-    const [events, setEvents] = useState<any[]>([]);
+    const [events, setEvents] = useState<SolanaEvent[]>([]);
     const [isMonitoring, setIsMonitoring] = useState(false);
     const [lastReward, setLastReward] = useState<string | null>(null);
     const [adContent, setAdContent] = useState<string>("Waiting for Star Atlas events...");
-    const [solanaStatus, setSolanaStatus] = useState<any>({ connected: false, tps: 0 });
+    const [solanaStatus, setSolanaStatus] = useState<SolanaStatus>({ connected: false, tps: 0 });
+    const [starAtlasShips, setStarAtlasShips] = useState<StarAtlasShip[]>([]);
+    const [loadingShips, setLoadingShips] = useState(false);
+
+    // Fetch Star Atlas ships on mount
+    useEffect(() => {
+        const loadShips = async () => {
+            setLoadingShips(true);
+            const result = await starAtlasService.getRandomShips(6);
+            if (result.success && result.data) {
+                setStarAtlasShips(result.data);
+                console.log('[SolanaGameBridge] Loaded', result.data.length, 'Star Atlas ships');
+            }
+            setLoadingShips(false);
+        };
+        loadShips();
+    }, []);
 
     // Fetch Solana Network Status
     useEffect(() => {
@@ -66,21 +101,24 @@ const SolanaGameBridge: React.FC = () => {
                 });
 
                 if (response.ok) {
-                    const { result } = await response.json();
+                    const data = await response.json();
+                    const result = data.result;
                     if (result && result.length > 0) {
                         const latestSig = result[0].signature;
 
                         // Check if this is a new event (very simple check for demo)
                         setEvents(prev => {
-                            const isNew = prev.length === 0 || prev[0].signature !== latestSig;
+                            const isNew = prev.length === 0 || prev[0].metadata.signature !== latestSig;
                             if (isNew) {
-                                const newEvent = {
+                                const newEvent: SolanaEvent = {
                                     id: latestSig.substring(0, 8),
-                                    signature: latestSig,
-                                    game: 'Star Atlas SAGE',
                                     type: 'ON_CHAIN_ACTION',
-                                    timestamp: new Date().toLocaleTimeString(),
-                                    block: result[0].slot
+                                    message: 'SAGE Activity Detected',
+                                    metadata: {
+                                        signature: latestSig,
+                                        timestamp: new Date().toLocaleTimeString(),
+                                        block: result[0].slot
+                                    }
                                 };
 
                                 // Trigger Ad Recommendation on new event
@@ -103,25 +141,40 @@ const SolanaGameBridge: React.FC = () => {
         return () => clearInterval(interval);
     }, [isMonitoring]);
 
-    const handleLiveEvent = async (event: any) => {
-        // Trigger n8n with REAL blockchain context
+    const handleLiveEvent = async (event: SolanaEvent) => {
+        // Get random ship for context
+        const randomShip = starAtlasShips[Math.floor(Math.random() * starAtlasShips.length)];
+        const shipContext = randomShip ? {
+            shipName: randomShip.name,
+            shipClass: randomShip.attributes?.class || 'unknown',
+            manufacturer: randomShip.attributes?.manufacturer || 'unknown'
+        } : {};
+
+        // Trigger n8n with REAL blockchain context + Star Atlas ship data
         const response = await n8nService.submitCampaign({
             name: `StarAtlas_Live_${event.id}`,
             budget: "500",
             objective: "engagement",
+            description: `Star Atlas Live Game Activity${randomShip ? ` - ${randomShip.name}` : ''}`,
             metadata: {
                 blockchain: "solana",
                 programId: SAGE_PROGRAM_ID,
-                signature: event.signature
+                signature: event.metadata.signature,
+                ...shipContext
             }
         });
 
         if (response.success && response.data?.aiRecommendations) {
-            setAdContent(response.data.message || "New Gear discovered in Star Atlas!");
+            const message = randomShip
+                ? `New ${randomShip.attributes?.class || 'ship'} detected: ${randomShip.name}!`
+                : response.data.message || "New Gear discovered in Star Atlas!";
+            setAdContent(message);
             setLastReward(`Event tracked: ${event.id}`);
 
             analyticsService.recordImpression({
-                nftokenId: `SOL_${event.id}`,
+                nftId: `SOL_${event.id}`,
+                adCreativeId: 'STAR_ATLAS_SAGE_LIVE',
+                placement: 'solana_game_bridge',
                 campaignId: response.data.campaignId
             });
         }
@@ -133,7 +186,7 @@ const SolanaGameBridge: React.FC = () => {
             <div className="p-8 border-b border-brand-blue/10 flex items-center justify-between bg-gradient-to-r from-brand-blue/5 to-transparent">
                 <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-brand-blue/20 rounded-2xl flex items-center justify-center text-brand-blue">
-                        <Globe className={`w-6 h-6 ${isMonitoring ? 'animate-spin-slow' : ''}`} />
+                        <Radio className={`w-6 h-6 ${isMonitoring ? 'animate-spin-slow' : ''}`} />
                     </div>
                     <div>
                         <h3 className="text-xl font-bold text-white">Solana Game Bridge</h3>
@@ -171,18 +224,18 @@ const SolanaGameBridge: React.FC = () => {
                             </div>
                         ) : (
                             events.map(event => (
-                                <div key={event.signature} className="p-4 bg-white/5 rounded-2xl border border-white/5 flex items-center justify-between animate-in slide-in-from-left duration-300">
+                                <div key={event.id} className="p-4 bg-white/5 rounded-2xl border border-white/5 flex items-center justify-between animate-in slide-in-from-left duration-300">
                                     <div className="flex items-center gap-4">
                                         <div className="w-2 h-2 rounded-full bg-brand-blue shadow-[0_0_8px_rgba(0,209,255,0.5)]"></div>
                                         <div>
-                                            <div className="font-bold text-sm text-white">SAGE Activity</div>
-                                            <div className="text-[10px] text-brand-gray font-mono truncate w-32">{event.signature}</div>
+                                            <div className="font-bold text-sm text-white">{event.message}</div>
+                                            <div className="text-[10px] text-brand-gray font-mono truncate w-32">{event.metadata.signature}</div>
                                         </div>
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-[10px] font-mono text-brand-gray">{event.timestamp}</div>
+                                        <div className="text-[10px] font-mono text-brand-gray">{event.metadata.timestamp}</div>
                                         <div className="text-[10px] text-brand-blue font-bold flex items-center gap-1 justify-end">
-                                            Slot: {event.block} <ArrowUpRight size={10} />
+                                            Slot: {event.metadata.block} <Coins size={10} />
                                         </div>
                                     </div>
                                 </div>
@@ -211,14 +264,14 @@ const SolanaGameBridge: React.FC = () => {
                                         View in Explorer
                                     </button>
                                 </div>
-                                <div className="absolute inset-0 opacity-10 pointer-events-none mesh-grid"></div>
+                                <div className="absolute inset-0 opacity-10 pointer-events-none mesh-grid-blue"></div>
                             </div>
                         </div>
 
                         {/* Status Panel */}
                         <div className="space-y-4">
                             <div className="flex items-center gap-2">
-                                <Shield className="text-brand-green w-4 h-4" />
+                                <Coins className="text-brand-green w-4 h-4" />
                                 <span className="text-sm font-bold uppercase text-brand-gray tracking-wider">Integration Health</span>
                             </div>
                             <div className="p-6 bg-brand-green/5 border border-brand-green/20 rounded-2xl space-y-4">
@@ -233,8 +286,9 @@ const SolanaGameBridge: React.FC = () => {
                                     <span className="text-white">Star Atlas (SAGE)</span>
                                 </div>
                                 {lastReward && (
-                                    <div className="text-[10px] text-brand-gray font-mono mt-2 pt-2 border-t border-white/5">
-                                        Last: {lastReward}
+                                    <div className="pt-4 border-t border-brand-green/10">
+                                        <div className="text-[10px] text-brand-gray uppercase mb-1">Last Settlement</div>
+                                        <div className="text-xs font-bold text-brand-green break-all">{lastReward}</div>
                                     </div>
                                 )}
                             </div>
@@ -242,6 +296,50 @@ const SolanaGameBridge: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Star Atlas Ships Gallery */}
+            {starAtlasShips.length > 0 && (
+                <div className="p-8 border-t border-brand-blue/10">
+                    <div className="flex items-center gap-2 mb-6">
+                        <Rocket className="text-brand-blue w-5 h-5" />
+                        <span className="text-sm font-bold uppercase text-brand-gray tracking-wider">Star Atlas Fleet</span>
+                        <span className="text-xs text-brand-blue/60">({starAtlasShips.length} ships)</span>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        {loadingShips ? (
+                            <div className="col-span-full text-center py-8 text-brand-gray">
+                                Loading Star Atlas ships...
+                            </div>
+                        ) : (
+                            starAtlasShips.map(ship => (
+                                <div
+                                    key={ship._id}
+                                    className="bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-brand-blue/50 transition-all group cursor-pointer"
+                                    title={ship.description || ship.name}
+                                >
+                                    {ship.image && (
+                                        <div className="aspect-square bg-black/50 relative overflow-hidden">
+                                            <img
+                                                src={ship.image}
+                                                alt={ship.name}
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                                            />
+                                        </div>
+                                    )}
+                                    <div className="p-3">
+                                        <div className="text-xs font-bold text-white truncate">{ship.name}</div>
+                                        <div className="text-[10px] text-brand-gray truncate">
+                                            {ship.attributes?.class || ship.attributes?.itemType || 'Ship'}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

@@ -171,7 +171,7 @@ const CampaignWizard: React.FC<CampaignWizardProps> = ({ isOpen, onClose }) => {
                                 <select
                                     id="campaign-objective"
                                     value={objective}
-                                    onChange={(e) => setObjective(e.target.value as any)}
+                                    onChange={(e) => setObjective(e.target.value as 'traffic' | 'conversions' | 'awareness')}
                                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-green/50 outline-none transition-colors appearance-none"
                                 >
                                     <option value="traffic">{t('campaign.wizard.fields.objective.options.traffic')}</option>
