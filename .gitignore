@@ -23,3 +23,16 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Temporary files and checks
+build_error.txt
+final_check*.json
+final_lint*.txt
+final_output.txt
+full_lint.txt
+full_paths.txt
+lint_output.txt
+lint_results.json
+zero_check.json
+*_check*.json
+*_lint*.txt
